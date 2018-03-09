@@ -2,6 +2,6 @@ package com.company;
 
 public class Mandos {
     int numeroBotones;
-    Boton boton;
+    Boton boton1;
     boolean funcional;
 }

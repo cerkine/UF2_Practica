@@ -1,6 +1,6 @@
 package com.company;
 
 public class Boton {
-    String color;
+    String color1;
     String forma;
 }
