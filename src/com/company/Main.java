@@ -6,12 +6,10 @@ public class Main {
 	// write your code here
     Atraccion atraccion = new Atraccion();
     atraccion.Change();
-    Seccion [] seccions = new Seccion[3];
-        for (int i = 0; i <seccions.length ; i++) {
-            seccions[i]= new Seccion();
-            seccions[i].DatosSeccion();
-            seccions[i].Mostrardatos();
-    }
+    Seccion seccion = new Seccion();
+    seccion.ChangeSeccion();
+
+
 
 
     }

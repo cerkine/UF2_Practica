@@ -6,7 +6,14 @@ public class Seccion {
     double width;
     double area= CalcularArea();
     String name;
+    Seccion [] seccions = {new Oceania(), new Africa(), new Europa()};
 
+    void ChangeSeccion(){
+        for (int i = 0; i <seccions.length ; i++) {
+            seccions[i].DatosSeccion();
+            seccions[i].Mostrardatos();
+        }
+    }
     double CalcularArea(){
         return height*width;
     }
