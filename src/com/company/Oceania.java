@@ -5,6 +5,6 @@ public class Oceania extends Seccion {
         place=1;
         height=2;
         width=3;
-
+        name= "Oceania";
     }
 }

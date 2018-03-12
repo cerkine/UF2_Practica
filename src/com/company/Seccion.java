@@ -5,6 +5,7 @@ public class Seccion {
     double height;
     double width;
     double area= CalcularArea();
+    String name;
 
     double CalcularArea(){
         return height*width;
@@ -12,5 +13,7 @@ public class Seccion {
     void DatosSeccion(){
 
     }
-
+    void Mostrardatos(){
+        System.out.println("Nombre: "+name +"\n lugar: "+place+ "\n area: " + area);
+    }
 }

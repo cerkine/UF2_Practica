@@ -8,7 +8,9 @@ public class Main {
     atraccion.Change();
     Seccion [] seccions = new Seccion[3];
         for (int i = 0; i <seccions.length ; i++) {
+            seccions[i]= new Seccion();
             seccions[i].DatosSeccion();
+            seccions[i].Mostrardatos();
     }
 
 
