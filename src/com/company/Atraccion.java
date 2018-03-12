@@ -10,8 +10,8 @@ public class Atraccion {
 
     void Change(){
         lista[0]= new Tiovivo();
-        lista[1] = new MontañaRusa();
         lista[0].CambiarAtr();
+        lista[1] = new MontañaRusa();
         lista[1].CambiarAtr();
     }
 

@@ -2,13 +2,15 @@ package com.company;
 
 public class Seccion {
     int place;
-    String name;
-    int height;
-    int width;
-    int area= CalcularArea();
+    double height;
+    double width;
+    double area= CalcularArea();
 
-    int CalcularArea(){
+    double CalcularArea(){
         return height*width;
+    }
+    void DatosSeccion(){
+
     }
 
 }
