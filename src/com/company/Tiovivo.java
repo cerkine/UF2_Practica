@@ -3,14 +3,15 @@ package com.company;
 public class Tiovivo extends Atraccion {
 
     int asientos = 20;
-    Atraccion tiovivo = new Atraccion();
 
-    void tiovivo(){
-        tiovivo.availability = true;
-        tiovivo.maxHeight = 2.5;
-        tiovivo.minHeight = 0.5;
-        tiovivo.price = 2;
+    @Override void CambiarAtr(){
+        open = true;
+        maintenance = false;
+        minHeight = 0;
+        maxHeight = 1.60;
+        price = 3;
     }
+
 
 
 }
