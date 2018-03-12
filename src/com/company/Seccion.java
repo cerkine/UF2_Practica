@@ -5,7 +5,7 @@ public class Seccion {
     String name;
     int height;
     int width;
-    int area = CalcularArea();
+    int area= CalcularArea();
 
     int CalcularArea(){
         return height*width;
