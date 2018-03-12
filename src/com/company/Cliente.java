@@ -5,5 +5,5 @@ public class Cliente {
     String subname;
     String DNI;
     String mail;
-
+    Boolean ;
 }
