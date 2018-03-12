@@ -5,4 +5,5 @@ public class Atraccion {
     double price;
     double maxHeight;
     double minHeight;
+    int p;
 }
