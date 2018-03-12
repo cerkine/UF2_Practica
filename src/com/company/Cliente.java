@@ -8,4 +8,8 @@ public class Cliente {
     boolean subscrption = false;
     int ages;
     boolean donation =false;
+
+
 }
+
+
