@@ -1,7 +1,8 @@
 package com.company;
 
 public class Atraccion {
-    boolean availability= true;
+    boolean open;
+    boolean maintenance;
     double price;
     double maxHeight;
     double minHeight;
