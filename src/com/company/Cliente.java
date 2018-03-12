@@ -5,5 +5,7 @@ public class Cliente {
     String subname;
     String DNI;
     String mail;
-    Boolean ;
+    boolean subscrption = false;
+    int ages;
+    boolean donation =false;
 }
