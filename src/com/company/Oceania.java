@@ -1,6 +1,6 @@
 package com.company;
 
-public class Oceania extends Seccion {
+class Oceania extends Seccion {
     @Override void DatosSeccion(){
         place=1;
         height=2;
