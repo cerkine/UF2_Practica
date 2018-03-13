@@ -10,8 +10,11 @@ public class Tiovivo extends Atraccion {
         minHeight = 0;
         maxHeight = 1.60;
         price = 3;
-//        seccion=seccion.sitios[0];
     }
 
+    @Override
+    void CargarSeccion(Seccion seccionPasada) {
+        super.CargarSeccion(seccionPasada);
 
+    }
 }
