@@ -8,11 +8,9 @@ public class MontañaRusa extends Atraccion {
         minHeight = 1.20;
         maxHeight = 0;
         price = 5;
+        seccion=seccion.seccions[0];
+    }
 
-    }
-    @Override void CargarSeccion(Seccion seccionPasada){
-        seccion=seccionPasada.seccions[0];
-    }
 
 
 }

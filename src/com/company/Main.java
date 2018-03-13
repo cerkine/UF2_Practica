@@ -8,9 +8,11 @@ public class Main {
     Seccion seccion = new Seccion();
     seccion.ChangeSeccion();
     Atraccion atraccion = new Atraccion();
-    atraccion.Change();
     atraccion.CargarSeccion(seccion);
-    System.out.println(atraccion.lista[0].seccion.name);
+    atraccion.Change();
+
+
+
 
 
 
