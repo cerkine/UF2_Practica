@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class Seccion {
+public  class Seccion {
     int place;
     double height;
     double width;
@@ -16,5 +16,7 @@ public abstract class Seccion {
             sitios[i].DatosSeccion();
         }
     }
-    abstract void DatosSeccion();
+    void DatosSeccion(){
+
+    }
 }
