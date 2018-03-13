@@ -21,6 +21,6 @@ public class Atraccion {
     }
 
     void CargarSeccion(Seccion seccionPasada){
-        seccion= seccionPasada;
+
     }
 }
