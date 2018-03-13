@@ -12,9 +12,8 @@ public class Tiovivo extends Atraccion {
         price = 3;
 
     }
-   @Override void CargarSeccion(Seccion seccionPasada){
-        seccion=seccionPasada;
+    @Override void CargarSeccion(Seccion seccionPasada){
+        seccion=seccionPasada.seccions[0];
     }
-
 
 }

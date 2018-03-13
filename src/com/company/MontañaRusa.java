@@ -11,7 +11,7 @@ public class MontañaRusa extends Atraccion {
 
     }
     @Override void CargarSeccion(Seccion seccionPasada){
-        seccion=seccionPasada;
+        seccion=seccionPasada.seccions[0];
     }
 
 
