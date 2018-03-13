@@ -1,6 +1,6 @@
 package com.company;
 
-public class Seccion {
+public abstract class Seccion {
     int place;
     double height;
     double width;
@@ -17,9 +17,9 @@ public class Seccion {
             sitios[i].Mostrardatos();
         }
     }
-    void DatosSeccion(){
 
-    }
+    abstract void DatosSeccion();
+
     void Mostrardatos(){
         System.out.println("Nombre: "+name +"\n lugar: "+place+ "\n area: " + area);
     }
