@@ -7,12 +7,14 @@ public class Atraccion {
     double price;
     double maxHeight;
     double minHeight;
+    Seccion seccion;
 
     void Change(){
         lista[0]= new Tiovivo();
         lista[0].CambiarAtr();
         lista[1] = new MontañaRusa();
         lista[1].CambiarAtr();
+        System.out.println( lista[0].seccion);
     }
 
     void CambiarAtr () {
