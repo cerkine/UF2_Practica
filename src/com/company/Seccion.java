@@ -17,7 +17,6 @@ public class Seccion {
             seccions[i].Mostrardatos();
         }
     }
-
     void DatosSeccion(){
 
     }

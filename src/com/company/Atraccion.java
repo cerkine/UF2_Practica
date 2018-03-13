@@ -14,10 +14,13 @@ public class Atraccion {
         lista[0].CambiarAtr();
         lista[1] = new MontañaRusa();
         lista[1].CambiarAtr();
-        System.out.println( lista[0].seccion);
     }
 
     void CambiarAtr () {
 
+    }
+
+    void CargarSeccion(Seccion seccionPasada){
+        seccion= seccionPasada;
     }
 }
