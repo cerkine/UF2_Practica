@@ -8,6 +8,7 @@ public class Atraccion {
     double maxHeight;
     double minHeight;
     Seccion seccion;
+    String lugar;
 
     void Change(){
         lista[0]= new Tiovivo();

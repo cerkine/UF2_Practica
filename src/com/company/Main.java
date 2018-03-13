@@ -10,13 +10,6 @@ public class Main {
     Atraccion atraccion = new Atraccion();
     atraccion.CargarSeccion(seccion);
     atraccion.Change();
-
-
-
-
-
-
-
     }
 
 }

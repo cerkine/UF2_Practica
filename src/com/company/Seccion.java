@@ -6,15 +6,15 @@ public class Seccion {
     double width;
     double area;
     String name;
-    Seccion [] seccions = new Seccion[3];
+    Seccion [] sitios = new Seccion[3];
 
     void ChangeSeccion(){
-        seccions[0]= new Oceania();
-        seccions[1]= new Africa();
-        seccions[2]= new Europa();
-        for (int i = 0; i <seccions.length ; i++) {
-            seccions[i].DatosSeccion();
-            seccions[i].Mostrardatos();
+        sitios[0]= new Oceania();
+        sitios[1]= new Africa();
+        sitios[2]= new Europa();
+        for (int i = 0; i <sitios.length ; i++) {
+            sitios[i].DatosSeccion();
+            sitios[i].Mostrardatos();
         }
     }
     void DatosSeccion(){
