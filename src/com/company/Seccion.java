@@ -14,7 +14,6 @@ public abstract class Seccion {
         sitios[2] = new Europa();
         for (int i = 0; i < sitios.length; i++) {
             sitios[i].DatosSeccion();
-
         }
     }
     abstract void DatosSeccion();
