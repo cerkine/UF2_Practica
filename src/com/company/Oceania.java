@@ -6,5 +6,6 @@ class Oceania extends Seccion {
         height=2;
         width=3;
         name= "Oceania";
+        area=height*width;
     }
 }

@@ -6,6 +6,7 @@ public class Africa extends Seccion {
         height=1.8;
         width=2.2;
         name= "Africa";
+        area=height*width;
     }
 }
 

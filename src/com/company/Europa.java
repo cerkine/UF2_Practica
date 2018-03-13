@@ -6,7 +6,9 @@ public class Europa extends Seccion {
         height=2.50;
         width=2.50;
         name= "Europa";
+        area=height*width;
     }
 }
+
 
 

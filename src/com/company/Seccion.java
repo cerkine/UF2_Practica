@@ -4,7 +4,7 @@ public class Seccion {
     int place;
     double height;
     double width;
-    double area= CalcularArea();
+    double area;
     String name;
     Seccion [] seccions = new Seccion[3];
 
@@ -17,9 +17,7 @@ public class Seccion {
             seccions[i].Mostrardatos();
         }
     }
-    double CalcularArea(){
-        return height*width;
-    }
+
     void DatosSeccion(){
 
     }
