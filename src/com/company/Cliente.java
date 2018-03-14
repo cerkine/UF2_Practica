@@ -46,7 +46,7 @@ public class Cliente {
 
     void mostrardatos(){
 
-        System.out.println("******");
+        System.out.println("Tus Datos");
 
     }
 
