@@ -44,6 +44,12 @@ public class Cliente {
 
     }
 
+    void mostrardatos(){
+
+        System.out.println("******");
+
+    }
+
 }
 
 
