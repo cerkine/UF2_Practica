@@ -15,7 +15,7 @@ public class Cliente {
     void pedirDatos(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("INTRODUCE TUS DATOS");
-        System.out.println("");
+        System.out.println();
         System.out.println("Como te llamas");
         name = scanner.nextLine();
 
