@@ -9,6 +9,7 @@ public class Atraccion {
     double minHeight;
     int numeroAtracciones=2;
     Seccion seccion;
+    //sfhahgasdgf
 
     void Change(){
         lista[0]= new Tiovivo();
