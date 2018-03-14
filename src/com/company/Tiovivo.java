@@ -13,6 +13,7 @@ public class Tiovivo extends Atraccion {
         minHeight = 0;
         maxHeight = 1.60;
         price = 3;
+        code_place=1;
     }
 
     @Override void CargarSeccion(Seccion seccionPasada) {
