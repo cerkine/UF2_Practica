@@ -47,6 +47,10 @@ public class Cliente {
     void mostrardatos(){
 
         System.out.println("Tus Datos");
+        System.out.println();
+        System.out.println(name);
+        System.out.println(subname);
+        System.out.println(DNI);
 
     }
 
