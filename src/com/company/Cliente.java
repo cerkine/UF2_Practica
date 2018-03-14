@@ -56,6 +56,7 @@ public class Cliente {
         System.out.println("Apellidos: "+subname);
         System.out.println("DNI: "+DNI);
         System.out.println("Socio: "+subscrption);
+
     }
 
 }

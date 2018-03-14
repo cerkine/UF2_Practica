@@ -15,5 +15,6 @@ public class Donacion {
         System.out.println("¡¡MUCHAS GRACIAS!!");
         System.out.println();
         System.out.println("EL BOTE ACTUAL ES: "+bote+"€");
+
     }
 }

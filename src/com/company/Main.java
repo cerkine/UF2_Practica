@@ -18,6 +18,7 @@ public class Main {
 
         cliente.pedirDatos();
         cliente.mostrardatos();
+
     }
 
 }
