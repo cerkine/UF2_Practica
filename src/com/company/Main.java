@@ -7,7 +7,7 @@ public class Main {
 	// write your code here
         Scanner scanner = new Scanner(System.in);
         Seccion seccion = new Seccion();
-        seccion.ChangeSeccion();
+        seccion.DatosSeccion();
         Atraccion atraccion = new Atraccion();
         atraccion.CargarSeccion(seccion);
         atraccion.Change();
