@@ -9,12 +9,13 @@ public class Atraccion {
     double minHeight;
     int numeroAtracciones=2;
     Seccion seccion;
+    int code_place;
 
     void Change(){
         lista[0]= new Tiovivo();
-        lista[0].CargarSeccion(seccion.sitios[0]);
+//        lista[0].CargarSeccion(seccion);
         lista[1] = new MontañaRusa();
-        lista[1].CargarSeccion(seccion.sitios[1]);
+//        lista[1].CargarSeccion(seccion);
         for (int x=0; x < numeroAtracciones; x++) {
             lista[x].CambiarAtr();
         }
