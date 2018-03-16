@@ -18,6 +18,5 @@ public class Tiovivo extends Atraccion {
 
     @Override void CargarSeccion(Seccion seccionPasada) {
         super.CargarSeccion(seccionPasada);
-
     }
 }
