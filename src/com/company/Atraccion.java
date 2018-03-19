@@ -25,6 +25,7 @@ public class Atraccion {
         lista[10] = new ZonaArcade();
         for (int x=0; x < numeroAtracciones; x++) {
             lista[x].CambiarAtr();
+
         }
     }
 
