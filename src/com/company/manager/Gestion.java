@@ -26,9 +26,9 @@ public class Gestion {
             }
         }
 
-        System.out.println("Quieres consultar el estado de las atracciones yago");
-
-            atraccion.Consulta();
+//        System.out.println("Quieres consultar el estado de las atracciones yago");
+//
+//            atraccion.Consulta();
 
 
 
