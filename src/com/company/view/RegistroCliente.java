@@ -43,15 +43,15 @@ public class RegistroCliente {
         }
 
     }
-    public String comprobarDni (Cliente cliente) {
+    public String comprobarDni () {
         System.out.println("Dni");
-        cliente.DNI = scanner.nextLine();
-        return cliente.DNI;
+        String cDNI = scanner.nextLine();
+        return cDNI;
     }
-    public String comprobarPass (Cliente cliente){
+    public String comprobarPass (){
         System.out.println("Pass");
-        cliente.pass=scanner.nextLine();
-        return cliente.pass;
+        String Cpass=scanner.nextLine();
+        return Cpass;
     }
     public void mostrardatos(Cliente cliente){
 

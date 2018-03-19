@@ -26,15 +26,19 @@ public class General {
                     }
                     break;
                 case 3:
+                    boolean existir=false;
+                    String comdni = registroCliente.comprobarDni();
+                    String compass= registroCliente.comprobarPass();
                     for (int i = 0; i <clientes.length ; i++) {
-                        if(clientes[i]!=null ) {
-                            String comdni = registroCliente.comprobarDni(clientes[i]);
-                            String compass= registroCliente.comprobarPass(clientes[i]);
-
-                        if (clientes[i].DNI.equals(comdni) && clientes[i].pass.equals(compass)) {
+                        if (clientes[i]!=null && clientes[i].DNI.equals(comdni) && clientes[i].pass.equals(compass)) {
                             System.out.println("existes bro");
+                            existir= true;
+                            break;
+
                         }
-                        }
+                    }
+                    if (!existir){
+                        System.out.println("Usuario/Contraseña  INCORRECTO");
                     }
             }
         }while(decisionS != 0);
