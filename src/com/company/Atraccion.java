@@ -12,10 +12,13 @@ public class Atraccion {
     int code_place;
 
     void Change(){
-        lista[0]= new Tiovivo();
+        lista[0] = new Tiovivo();
 //        lista[0].CargarSeccion(seccion);
         lista[1] = new MontañaRusa();
 //        lista[1].CargarSeccion(seccion);
+        lista[2] = new Toroloco();
+        lista[3] = new Tronquitos();
+        lista[4] = new Noria();
         for (int x=0; x < numeroAtracciones; x++) {
             lista[x].CambiarAtr();
         }
