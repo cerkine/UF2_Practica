@@ -10,7 +10,7 @@ public class General {
     Scanner scanner =new Scanner(System.in);
     RegistroCliente registroCliente = new RegistroCliente();
     PantallaDonacion pantallaDonacion = new PantallaDonacion();
-    public void decision() {
+    public Cliente decision() {
         do {
             System.out.println("Que deseas hacer: \n Nuevo cliente-1 \n Soy cliente-3 \n Salir -0");
             decisionS = scanner.nextInt();scanner.nextLine();
@@ -18,10 +18,9 @@ public class General {
                 case 1:
                     for (int i = 0; i < clientes.length; i++) {
                         if (clientes[i] == null) {
-
                             clientes[i]= new Cliente();
                             registroCliente.pedirDatos(clientes[i]);
-                            break;
+                            return clientes[i];
                         }
                     }
                     break;
@@ -31,9 +30,8 @@ public class General {
                     String compass= registroCliente.comprobarPass();
                     for (int i = 0; i <clientes.length ; i++) {
                         if (clientes[i]!=null && clientes[i].DNI.equals(comdni) && clientes[i].pass.equals(compass)) {
-                            System.out.println("existes bro");
                             existir= true;
-                            break;
+                            return clientes[i];
 
                         }
                     }
@@ -42,5 +40,6 @@ public class General {
                     }
             }
         }while(decisionS != 0);
+        return clientes[99];
     }
 }

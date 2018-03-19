@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Cliente cliente;
 	// write your code here
         Scanner scanner = new Scanner(System.in);
 
@@ -17,7 +18,9 @@ public class Main {
         gestion.CargarParque();
 
         General general = new General();
-        general.decision();
+        cliente=general.decision();// para ver que cliente es y poder jugar con el innecesario por ahora
+
+
 
     }
 
