@@ -1,8 +1,8 @@
 package com.company;
 
 public class Atraccion {
-    int numeroAtracciones=11;
-    Atraccion [] lista = new Atraccion[numeroAtracciones+1];
+    Class[] classes = {Tiovivo.class, MontañaRusa.class, AutosChoque.class, CarreraCaballos.class, Noria.class, Pacman.class, PiedraPapelTijeraLagartoSpok.class, Toroloco.class, Tragaperras.class, Tronquitos.class, ZonaArcade.class};
+    Atraccion [] lista = new Atraccion[classes.length];
     boolean open;
     boolean maintenance;
     double price;
@@ -12,18 +12,14 @@ public class Atraccion {
     int code_place;
 
     void Change(){
-        lista[0]= new Tiovivo();
-        lista[1] = new MontañaRusa();
-        lista[2] = new AutosChoque();
-        lista[3] = new CarreraCaballos();
-        lista[4] = new Noria();
-        lista[5] = new Pacman();
-        lista[6] = new PiedraPapelTijeraLagartoSpok();
-        lista[7] = new Toroloco();
-        lista[8] = new Tragaperras();
-        lista[9] = new Tronquitos();
-        lista[10] = new ZonaArcade();
-        for (int x=0; x < numeroAtracciones; x++) {
+        for (int x=0; x < classes.length; x++) {
+            try {
+                lista[x] = (Atraccion) classes[x].newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
             lista[x].CambiarAtr();
         }
     }
@@ -37,7 +33,7 @@ public class Atraccion {
     }
 
     void Consulta () {
-        for (int x=0; x < numeroAtracciones; x++){
+        for (int x=0; x < lista.length; x++){
             if (lista[x].maintenance){
                 System.out.println(lista[x].getClass().getSimpleName() + " esta en" + " \u001B[31mMANTENIMIENTO\u001B[0m");
             }

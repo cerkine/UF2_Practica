@@ -16,7 +16,7 @@ public class Gestion {
 
 
         for (int i = 0; i < seccion.length; i++) {
-            for (int j = 0; j < atraccion.numeroAtracciones; j++) {
+            for (int j = 0; j < atraccion.classes.length; j++) {
                 if (seccion[i].code_place == atraccion.lista[j].code_place) {
                     atraccion.lista[j].seccion=seccion[i];
                 }
