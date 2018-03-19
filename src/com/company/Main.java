@@ -11,6 +11,7 @@ public class Main {
         Atraccion atraccion = new Atraccion();
         atraccion.CargarSeccion(seccion);
         atraccion.Change();
+        System.out.println(atraccion.lista[0].seccion.name);
         System.out.println("Quieres consultar el estado de las atracciones?");
         if (scanner.nextLine().toLowerCase().equals("si")) {
             atraccion.Consulta();

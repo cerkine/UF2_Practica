@@ -1,6 +1,6 @@
 package com.company;
 
-public  class Seccion {
+public class Seccion {
     int place;
     double height;
     double width;
