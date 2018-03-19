@@ -11,7 +11,7 @@ public class Cliente {
     boolean subscrption = false;
     int ages;
     boolean donation =false;
-    int donate;
+    String preg;
 
     void pedirDatos(){
         Scanner scanner = new Scanner(System.in);
@@ -31,16 +31,18 @@ public class Cliente {
 
         System.out.println("¿Que edad tienes?");
         ages = scanner.nextInt();
-
+        scanner.nextLine();
         if (ages > 17) {
             System.out.println("¿Quieres hacerte la tarjeta de socio?");
+            preg = scanner.nextLine();
 
-            if (scanner.nextLine().equals("si")) {
+            if (preg.equals("si")) {
                 subscrption = true;
             }
 
             System.out.println("¿Quieres donar?");
-            if (scanner.nextLine().equals("si")) {
+            preg = scanner.nextLine();
+            if (preg.equals("si")) {
                 donation = true;
                 donacion.donar();
             }
@@ -50,15 +52,23 @@ public class Cliente {
 
     void mostrardatos(){
 
+        System.out.println();
         System.out.println("Tus Datos");
         System.out.println();
         System.out.println("Nombre: "+name);
         System.out.println("Apellidos: "+subname);
         System.out.println("DNI: "+DNI);
         System.out.println("Socio: "+subscrption);
+        if (donation){
+            System.out.println("Tu donacion: "+ donacion.donacion);
+        }
 
     }
 
+    codigo:
+    ▏ ▏ ▏▏ ▏▏  ▏▏▏ ▏ ▏▏ ▏
+    ▏ ▏ ▏▏ ▏▏  ▏▏▏ ▏ ▏▏ ▏
+    ▏ ▏ ▏▏ ▏▏  ▏▏▏ ▏ ▏▏ ▏
 }
 
 
