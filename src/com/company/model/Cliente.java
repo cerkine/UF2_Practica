@@ -3,7 +3,7 @@ package com.company.model;
 import java.util.Scanner;
 
 public class Cliente {
-    Donacion donacion;
+    public double cantidad;
     public String name;
     public String subname;
     public String DNI;

@@ -1,9 +1,8 @@
 package com.company;
 import com.company.manager.Gestion;
 import com.company.model.Cliente;
-import com.company.view.General;
-import com.company.view.PantallaDonacion;
-import com.company.view.RegistroCliente;
+import com.company.model.Donacion;
+import com.company.view.ClienteView;
 
 import java.util.Scanner;
 
@@ -17,8 +16,10 @@ public class Main {
         Gestion gestion = new Gestion();
         gestion.CargarParque();
 
-        General general = new General();
-        cliente=general.decision();// para ver que cliente es y poder jugar con el innecesario por ahora
+        Donacion donacion = new Donacion();
+
+        ClienteView clienteView = new ClienteView();
+        cliente=clienteView.decision();// para ver que cliente es y poder jugar con el innecesario por ahora
 
 
 

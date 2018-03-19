@@ -1,11 +1,15 @@
 package com.company.view;
 
+import com.company.Main;
 import com.company.model.Cliente;
+import com.company.model.Donacion;
 
 import java.util.Scanner;
 
 public class RegistroCliente {
     Scanner scanner = new Scanner(System.in);
+    PantallaDonacion pantalladonacion = new PantallaDonacion();
+    Donacion donacion;
 
     public void pedirDatos(Cliente cliente){
         System.out.println("INTRODUCE TUS DATOS");
@@ -38,20 +42,20 @@ public class RegistroCliente {
             System.out.println("¿Quieres donar?");
             if (scanner.nextLine().equals("si")) {
                 cliente.donation = true;
-                //pantalladonacion.donar();
+                pantalladonacion.donar(cliente,donacion);
             }
         }
 
     }
     public String comprobarDni () {
         System.out.println("Dni");
-        String cDNI = scanner.nextLine();
-        return cDNI;
+        return scanner.nextLine();
+
     }
     public String comprobarPass (){
         System.out.println("Pass");
-        String Cpass=scanner.nextLine();
-        return Cpass;
+        return scanner.nextLine();
+
     }
     public void mostrardatos(Cliente cliente){
 
