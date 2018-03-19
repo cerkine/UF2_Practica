@@ -17,8 +17,12 @@ public class MainAdri {
             atraccion.Consulta();
         }
 
-
-
-
+        ZonaArcade zonaArcade = new ZonaArcade();
+        zonaArcade.CambiarAtr();
+        if (zonaArcade.maintenance == true){
+            System.out.println("hola");
+        }
+        else
+            System.out.println("adios");
     }
 }
