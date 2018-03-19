@@ -46,6 +46,7 @@ public class Cliente {
                 donation = true;
                 donacion.donar();
             }
+
         }
 
     }
