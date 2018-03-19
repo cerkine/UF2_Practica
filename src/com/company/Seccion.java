@@ -15,6 +15,5 @@ public  class Seccion {
         sitios.width=width;
         sitios.area=width*height;
         sitios.name=name;
-
     }
 }
