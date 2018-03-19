@@ -34,7 +34,7 @@ public class Atraccion {
             if (lista[x].maintenance){
                 System.out.println(lista[x].getClass().getSimpleName() + " esta en" + " \u001B[31mMANTENIMIENTO\u001B[0m");
             }
-            else if (lista[x].open){
+            else if (lista[x].open) {
                 System.out.println(lista[x].getClass().getSimpleName() + " esta" + " \u001B[32mABIERTA\u001B[0m");
             }
             else {
@@ -44,4 +44,6 @@ public class Atraccion {
 
         }
     }
+
+
 }

@@ -1,19 +1,22 @@
 package com.company;
 
-
-
-public  class Seccion {
-    int code_place; /* codigo del lugar */
-    double height; /* todo es km */
+public class Seccion {
+    int place;
+    double height;
     double width;
     double area;
     String name;
+    Seccion[] sitios = new Seccion[3];
 
-    void DatosSeccion(Seccion sitios, int codigo, double height, double width, String name) {
-        sitios.code_place =codigo;
-        sitios.height=height;
-        sitios.width=width;
-        sitios.area=width*height;
-        sitios.name=name;
+    void ChangeSeccion() {
+        sitios[0] = new Oceania();
+        sitios[1] = new Africa();
+        sitios[2] = new Europa();
+        for (int i = 0; i < sitios.length; i++) {
+            sitios[i].DatosSeccion();
+        }
+    }
+    void DatosSeccion(){
+
     }
 }
