@@ -5,8 +5,10 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        Scanner scanner = new Scanner(System.in);
 
-
+        Gestion gestion = new Gestion();
+        gestion.CargarParque();
     }
 
 }
