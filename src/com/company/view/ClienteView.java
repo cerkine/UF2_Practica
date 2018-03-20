@@ -14,8 +14,18 @@ public class ClienteView {
 
             System.out.println("Que deseas hacer: \n Nuevo cliente-1 \n Soy cliente-3 \n Salir -0");
             decisionS = scanner.nextInt();scanner.nextLine();
-            Cliente cliente = gestionCliente.cargarCliente(decisionS);
-            return registroCliente.pedirDatos(cliente);
+
+            switch (decisionS) {
+                case 1:
+                    Cliente cliente = gestionCliente.cargarCliente();
+                    return registroCliente.pedirDatos(cliente);
+                case 3:
+                    String pedirDni= registroCliente.pedirDni();
+                    String pedirPass= registroCliente.pedirPass();
+
+                    return gestionCliente.comprobarCliente(pedirDni,pedirPass);
+            }
+            return null;
 
     }
 }

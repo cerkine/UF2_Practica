@@ -24,8 +24,11 @@ public class Main {
         Donacion donacion = new Donacion();
 
         ClienteView clienteView = new ClienteView();
-        cliente=clienteView.decision();// para ver que cliente es y poder jugar con el innecesario por ahora
-        System.out.println(cliente.name);
+        do{
+            cliente=clienteView.decision();// para ver que cliente es y poder jugar con el innecesario por ahora
+            System.out.println(cliente.name);
+        }while (true);
+
 
     }
 

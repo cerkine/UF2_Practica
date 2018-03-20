@@ -47,12 +47,12 @@ public class RegistroCliente {
         }
         return cliente;
     }
-    public String comprobarDni () {
+    public String pedirDni () {
         System.out.println("Dni");
         return scanner.nextLine();
 
     }
-    public String comprobarPass (){
+    public String pedirPass (){
         System.out.println("Pass");
         return scanner.nextLine();
 
