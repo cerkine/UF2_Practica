@@ -6,7 +6,6 @@ import com.company.model.Cliente;
 import java.util.Scanner;
 
 public class ClienteView {
-    Cliente cliente;
     public int decisionS;
     Scanner scanner =new Scanner(System.in);
     GestionCliente gestionCliente = new GestionCliente();
