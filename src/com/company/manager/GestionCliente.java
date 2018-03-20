@@ -2,7 +2,6 @@ package com.company.manager;
 
 import com.company.model.Cliente;
 import com.company.view.RegistroCliente;
-
 public class GestionCliente {
     Cliente []clientes = new Cliente[100];
     public Cliente cargarCliente(){
