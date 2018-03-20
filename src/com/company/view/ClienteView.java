@@ -13,7 +13,8 @@ public class ClienteView {
 
             System.out.println("Que deseas hacer: \n Nuevo cliente-1 \n Soy cliente-3 \n Salir -0");
             decisionS = scanner.nextInt();scanner.nextLine();
-            return gestionCliente.cargarCliente(decisionS);
+            Cliente cliente = gestionCliente.cargarCliente(decisionS);
+            return null;
 
     }
 }

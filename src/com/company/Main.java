@@ -27,7 +27,6 @@ public class Main {
         cliente=clienteView.decision();// para ver que cliente es y poder jugar con el innecesario por ahora
 
 
-
     }
 
 }
