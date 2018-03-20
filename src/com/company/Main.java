@@ -25,7 +25,7 @@ public class Main {
 
         ClienteView clienteView = new ClienteView();
         cliente=clienteView.decision();// para ver que cliente es y poder jugar con el innecesario por ahora
-
+        System.out.println(cliente.name);
 
     }
 

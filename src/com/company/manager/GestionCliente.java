@@ -12,7 +12,6 @@ public class GestionCliente {
                 for (int i = 0; i < clientes.length; i++) {
                     if (clientes[i] == null) {
                         clientes[i]= new Cliente();
-                        registroCliente.pedirDatos(clientes[i]);
                         return clientes[i];
                     }
                 }

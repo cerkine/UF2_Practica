@@ -11,7 +11,7 @@ public class RegistroCliente {
     PantallaDonacion pantalladonacion = new PantallaDonacion();
     Donacion donacion;
 
-    public void pedirDatos(Cliente cliente){
+    public Cliente pedirDatos(Cliente cliente){
         System.out.println("INTRODUCE TUS DATOS");
         System.out.println();
         System.out.println("Como te llamas");
@@ -45,7 +45,7 @@ public class RegistroCliente {
                 pantalladonacion.donar(cliente,donacion);
             }
         }
-
+        return cliente;
     }
     public String comprobarDni () {
         System.out.println("Dni");
