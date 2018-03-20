@@ -1,21 +1,19 @@
-package com.company;
+package com.company.model;
 
 import java.util.Random;
 
-public class Tiovivo extends Atraccion {
-
-    int asientos = 20;
+public class AutosChoque extends Atraccion{
     Random random = new Random();
 
-    @Override void CambiarAtr(){
+    @Override public void CambiarAtr(){
         open = random.nextBoolean();
         maintenance = random.nextBoolean();
         minHeight = 0;
         maxHeight = 1.60;
-        price = 3;
+        price = 1;
     }
 
-    @Override void CargarSeccion(Seccion seccionPasada) {
+    @Override public void CargarSeccion(Seccion seccionPasada) {
         super.CargarSeccion(seccionPasada);
 
     }
