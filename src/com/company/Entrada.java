@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.model.Cliente;
+
 public class Entrada {
     Cliente cliente = new Cliente();
 
