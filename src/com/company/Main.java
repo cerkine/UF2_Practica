@@ -1,5 +1,6 @@
 package com.company;
 import com.company.manager.Gestion;
+import com.company.manager.GestionAlturaAtraccionCliente;
 import com.company.manager.GestionAtraccion;
 import com.company.manager.GestionConsulta;
 import com.company.model.Cliente;
@@ -12,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         Cliente cliente;
-	// write your code here
+        // write your code here
         GestionAtraccion gestionAtraccion = new GestionAtraccion();
         gestionAtraccion.Change();
         GestionConsulta gestionConsulta = new GestionConsulta();
@@ -24,7 +25,7 @@ public class Main {
         Donacion donacion = new Donacion();
 
         ClienteView clienteView = new ClienteView();
-        do{
+            do{
             cliente=clienteView.decision();/*
             Esto puede llegar a dar un null, podemos hacer que el cliente[99] lo cargemos, ponemos una variable boolean en cliente que sea null=false, si esto nos va a devolver un null, podemos iniciarliar
             ese cliente y lo cargamos con null true, aqui podmos hacer que si if(cliente.null) haga una cosa y sino pos que haga otra, asi nos evitamos que el main pete si no hay espacio de usuario o si no introducen
@@ -32,7 +33,8 @@ public class Main {
 
             System.out.println(cliente.name);
         }while (true);
-
+        GestionAlturaAtraccionCliente  gestionAltura= new GestionAlturaAtraccionCliente();
+            gestionAltura.CompararAltura();
 
     }
 

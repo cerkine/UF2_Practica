@@ -4,7 +4,7 @@ import com.company.model.*;
 
 public class GestionAtraccion {
     public int numeroAtracciones=11;
-    Atraccion [] lista = new Atraccion[numeroAtracciones+1];
+    public Atraccion [] lista = new Atraccion[numeroAtracciones+1];
     public void Change(){
         lista[0]= new Tiovivo();
         lista[1] = new MontañaRusa();
