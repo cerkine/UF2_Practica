@@ -5,10 +5,9 @@ import com.company.model.Seccion;
 
 public class Gestion {
 
-    public void CargarParque() {
-        GestionAtraccion gestionAtraccion = new GestionAtraccion();
-        GestionConsulta gestionConsulta = new GestionConsulta();
-        gestionConsulta.Consulta(gestionAtraccion);
+    public void CargarParque(GestionAtraccion gestionAtraccion) {
+
+
         Seccion[] seccion = new Seccion[3];
         for (int i = 0; i<seccion.length ; i++) {
             seccion[i]= new Seccion();
@@ -17,7 +16,7 @@ public class Gestion {
         seccion[1].DatosSeccion(seccion[1], 1, 1.85, 2, "Ciudadela");
         seccion[2].DatosSeccion(seccion[2], 2, 0.5, 3.8, "Bosque NO Prohibido");
         Atraccion atraccion = new Atraccion();
-        gestionAtraccion.Change();
+
 //        atraccion.CargarSeccion(seccion[0]);
 
 
@@ -28,6 +27,7 @@ public class Gestion {
                 }
             }
         }
+
 
 //        System.out.println("Quieres consultar el estado de las atracciones yago");
 //

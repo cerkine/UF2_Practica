@@ -21,5 +21,7 @@ public class GestionAtraccion {
             lista[x].CambiarAtr();
 
         }
+
+
     }
 }
