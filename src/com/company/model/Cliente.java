@@ -13,7 +13,7 @@ public class Cliente {
     public int ages;
     public boolean donation =false;
     public int donate;
-    public int height;
+    public double height;
 
 }
 

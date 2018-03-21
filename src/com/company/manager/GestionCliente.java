@@ -5,7 +5,6 @@ import com.company.view.RegistroCliente;
 
 public class GestionCliente {
     Cliente []clientes = new Cliente[100];
-    RegistroCliente registroCliente = new RegistroCliente();
 
 
     public Cliente cargarCliente(){

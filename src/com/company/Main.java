@@ -21,20 +21,18 @@ public class Main {
 
         Gestion gestion = new Gestion();
         gestion.CargarParque(gestionAtraccion);
-
+        ViewAlturaAtraccionCliente verAltura= new ViewAlturaAtraccionCliente();
         Donacion donacion = new Donacion();
 
         ClienteView clienteView = new ClienteView();
-            do{
+
             cliente=clienteView.decision();/*
             Esto puede llegar a dar un null, podemos hacer que el cliente[99] lo cargemos, ponemos una variable boolean en cliente que sea null=false, si esto nos va a devolver un null, podemos iniciarliar
             ese cliente y lo cargamos con null true, aqui podmos hacer que si if(cliente.null) haga una cosa y sino pos que haga otra, asi nos evitamos que el main pete si no hay espacio de usuario o si no introducen
             bien la contraseña*/
 
-            System.out.println(cliente.name);
-        }while (true);
-        ViewAlturaAtraccionCliente gestionAltura= new ViewAlturaAtraccionCliente();
-            gestionAltura.CompararAltura();
+        System.out.println(cliente.name);
+        verAltura.CompararAltura(cliente, gestionAtraccion.lista);
 
     }
 

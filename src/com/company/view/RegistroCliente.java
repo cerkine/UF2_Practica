@@ -33,7 +33,7 @@ public class RegistroCliente {
         cliente.ages = scanner.nextInt();scanner.nextLine();
 
         System.out.println("Cuanto mides de alto?");
-        cliente.height = scanner.nextInt();scanner.nextLine();
+        cliente.height = scanner.nextDouble();scanner.nextLine();
 
         if (cliente.ages > 17) {
             System.out.println("¿Quieres hacerte la tarjeta de socio?");
