@@ -1,6 +1,6 @@
 package com.company;
 import com.company.manager.Gestion;
-import com.company.manager.GestionAlturaAtraccionCliente;
+import com.company.view.ViewAlturaAtraccionCliente;
 import com.company.manager.GestionAtraccion;
 import com.company.manager.GestionConsulta;
 import com.company.model.Cliente;
@@ -33,7 +33,7 @@ public class Main {
 
             System.out.println(cliente.name);
         }while (true);
-        GestionAlturaAtraccionCliente  gestionAltura= new GestionAlturaAtraccionCliente();
+        ViewAlturaAtraccionCliente gestionAltura= new ViewAlturaAtraccionCliente();
             gestionAltura.CompararAltura();
 
     }
