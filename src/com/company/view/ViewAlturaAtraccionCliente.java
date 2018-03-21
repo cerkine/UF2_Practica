@@ -16,7 +16,6 @@ public class ViewAlturaAtraccionCliente {
             else{
                 System.out.println("Puedes entrar en la atraccion");
             }
-
         }
     }
 }
