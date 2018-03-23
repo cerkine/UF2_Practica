@@ -5,10 +5,9 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Scanner scanner = new Scanner(System.in);
+        Entrada entrada = new Entrada();
 
-        Gestion gestion = new Gestion();
-        gestion.CargarParque();
+        entrada.imprimirentrada();
     }
 
 }
