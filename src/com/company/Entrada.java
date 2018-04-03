@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Random;
 
+
 public class Entrada {
     String name = "David";
     String subname = "Delgado";
