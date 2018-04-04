@@ -1,5 +1,7 @@
 package com.company.view;
 
+import com.company.manager.GestionAtraccion;
+import com.company.manager.GestionConsulta;
 import com.company.model.Atraccion;
 import com.company.model.Cliente;
 
@@ -10,7 +12,8 @@ public class MenuEleccionCliente {
     Scanner scanner = new Scanner(System.in);
     ViewAlturaAtraccionCliente viewAlturaAtraccionCliente= new ViewAlturaAtraccionCliente();
     Entrada entrada = new Entrada();
-    public void menuCliente(Cliente cliente, Atraccion[] lista){
+    GestionConsulta consulta = new GestionConsulta();
+    public void menuCliente(Cliente cliente, Atraccion[] lista, GestionAtraccion gestionAtraccion){
         System.out.println("Que quieres hacer ?");
         System.out.println("1) Mirar las atracciones que estan abiertas");
         System.out.println("2) Mirar a las atracciones que puede entrar");
@@ -21,10 +24,9 @@ public class MenuEleccionCliente {
 
       switch (opcion){
           case 1:
-
+              consulta.Consulta(gestionAtraccion);
               break;
           case 2:
-
               viewAlturaAtraccionCliente.CompararAltura(cliente,lista);
               break;
           case 3:

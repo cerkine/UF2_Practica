@@ -31,7 +31,7 @@ public class Main {
             bien la contraseña*/
 
         MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();
-        menuEleccionCliente.menuCliente(cliente,gestionAtraccion.lista);
+        menuEleccionCliente.menuCliente(cliente,gestionAtraccion.lista, gestionAtraccion);
     }
 
 }
