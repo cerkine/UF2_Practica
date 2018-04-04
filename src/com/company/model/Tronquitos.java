@@ -1,4 +1,4 @@
-package com.company;
+package com.company.model;
 
 import java.util.Random;
 
@@ -6,7 +6,7 @@ public class Tronquitos extends Atraccion{
 
     Random random = new Random();
 
-    @Override void CambiarAtr(){
+    @Override public void CambiarAtr(){
         open = random.nextBoolean();
         maintenance = random.nextBoolean();
         minHeight = 1.40;
@@ -14,7 +14,7 @@ public class Tronquitos extends Atraccion{
         price = 2;
     }
 
-    @Override void CargarSeccion(Seccion seccionPasada) {
+    @Override public void CargarSeccion(Seccion seccionPasada) {
         super.CargarSeccion(seccionPasada);
 
     }
