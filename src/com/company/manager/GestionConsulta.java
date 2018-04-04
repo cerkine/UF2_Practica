@@ -3,7 +3,7 @@ package com.company.manager;
 public class GestionConsulta {
 
     public void Consulta (GestionAtraccion gestionAtraccion) {
-        for (int x=0; x < gestionAtraccion.numeroAtracciones; x++){
+        for (int x=0; x < gestionAtraccion.classes.length; x++){
             if (gestionAtraccion.lista[x].maintenance){
                 System.out.println(gestionAtraccion.lista[x].getClass().getSimpleName() + " esta en" + " \u001B[31mMANTENIMIENTO\u001B[0m");
             }
