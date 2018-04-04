@@ -30,6 +30,13 @@ public class GestionCliente {
         }
         return  null;
     }
+
+    public Cliente clienteDefault () {
+        clientes[99] = new Cliente();
+        clientes[99].DNI="0";
+        clientes[99].pass="0";
+        return  clientes[99];
+    }
 //    public Cliente cargarCliente2(int decisionS){
 //        switch (decisionS) {
 //            case 1:

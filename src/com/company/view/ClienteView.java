@@ -25,6 +25,8 @@ public class ClienteView {
                     String pedirPass= registroCliente.pedirPass();
 
                     return gestionCliente.comprobarCliente(pedirDni,pedirPass);
+                case 0:
+                    return cliente = gestionCliente.clienteDefault();
             }
             return null;
 
