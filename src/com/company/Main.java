@@ -1,5 +1,7 @@
 package com.company;
 import com.company.manager.Gestion;
+import com.company.view.MenuEleccionCliente;
+import com.company.view.ViewAlturaAtraccionCliente;
 import com.company.manager.GestionAtraccion;
 import com.company.manager.GestionConsulta;
 import com.company.model.Cliente;
@@ -12,28 +14,24 @@ public class Main {
 
     public static void main(String[] args) {
         Cliente cliente;
-	// write your code here
+        // write your code here
         GestionAtraccion gestionAtraccion = new GestionAtraccion();
         gestionAtraccion.Change();
-        GestionConsulta gestionConsulta = new GestionConsulta();
+//        GestionConsulta gestionConsulta = new GestionConsulta();
         Scanner scanner = new Scanner(System.in);
 
         Gestion gestion = new Gestion();
         gestion.CargarParque(gestionAtraccion);
 
-        Donacion donacion = new Donacion();
-
         ClienteView clienteView = new ClienteView();
-        do{
-            cliente=clienteView.decision();/*
+
+        cliente=clienteView.decision();/*
             Esto puede llegar a dar un null, podemos hacer que el cliente[99] lo cargemos, ponemos una variable boolean en cliente que sea null=false, si esto nos va a devolver un null, podemos iniciarliar
             ese cliente y lo cargamos con null true, aqui podmos hacer que si if(cliente.null) haga una cosa y sino pos que haga otra, asi nos evitamos que el main pete si no hay espacio de usuario o si no introducen
             bien la contraseña*/
 
-            System.out.println(cliente.name);
-        }while (true);
-
-
+        MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();
+        menuEleccionCliente.menuCliente(cliente,gestionAtraccion.lista);
     }
 
 }

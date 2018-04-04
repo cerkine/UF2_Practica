@@ -8,6 +8,9 @@ public class Arcade extends Atraccion {
     @Override public void CambiarAtr(){
         open = random.nextBoolean();
         maintenance = random.nextBoolean();
+        minHeight = 1.10;
+        maxHeight = 2.30;
+        price = 2;
     }
 
     @Override public void CargarSeccion(Seccion seccionPasada) {

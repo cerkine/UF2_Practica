@@ -5,6 +5,8 @@ import com.company.view.RegistroCliente;
 
 public class GestionCliente {
     Cliente []clientes = new Cliente[100];
+
+
     public Cliente cargarCliente(){
         for (int i = 0; i < clientes.length; i++) {
             if (clientes[i] == null) {
@@ -20,6 +22,7 @@ public class GestionCliente {
             if (clientes[i]!=null && clientes[i].DNI.equals(comdni) && clientes[i].pass.equals(compass)) {
                 existir= true;
                 return clientes[i];
+
             }
         }
         if (!existir){
