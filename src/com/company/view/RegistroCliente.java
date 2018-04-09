@@ -55,7 +55,6 @@ public class RegistroCliente {
     public String pedirDni () {
         System.out.println("Dni");
         return scanner.nextLine();
-
     }
     public String pedirPass (){
         System.out.println("Pass");
