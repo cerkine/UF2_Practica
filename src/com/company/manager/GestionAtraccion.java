@@ -5,7 +5,7 @@ import com.company.model.*;
 public class GestionAtraccion {
     public Class[] classes = {Tiovivo.class, MontañaRusa.class, AutosChoque.class, CarreraCaballos.class, Noria.class, Pacman.class, PiedraPapelTijeraLagartoSpok.class, Toroloco.class, Tragaperras.class, Tronquitos.class, ZonaArcade.class};
     public Atraccion [] lista = new Atraccion[classes.length];
-    public void Change(){
+    public void change(){
         for (int x=0; x < classes.length; x++){
             try {
                 lista[x] = (Atraccion) classes[x].newInstance();
@@ -15,7 +15,7 @@ public class GestionAtraccion {
                 e.printStackTrace();
             }
 
-            lista[x].CambiarAtr();
+            lista[x].cambiarAtr();
         }
 
 

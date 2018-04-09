@@ -7,7 +7,7 @@ public class Tiovivo extends Atraccion {
     int asientos = 20;
     Random random = new Random();
 
-    @Override public void CambiarAtr(){
+    @Override public void cambiarAtr(){
         open = random.nextBoolean();
         maintenance = random.nextBoolean();
         minHeight = 0;
@@ -16,7 +16,7 @@ public class Tiovivo extends Atraccion {
         code_place=1;
     }
 
-    @Override public void CargarSeccion(Seccion seccionPasada) {
-        super.CargarSeccion(seccionPasada);
+    @Override public void cargarSeccion(Seccion seccionPasada) {
+        super.cargarSeccion(seccionPasada);
     }
 }
