@@ -10,6 +10,7 @@ public class ClienteView {
     Scanner scanner =new Scanner(System.in);
     GestionCliente gestionCliente = new GestionCliente();
     RegistroCliente registroCliente = new RegistroCliente();
+
     public Cliente decision() {
 
             System.out.println("Que deseas hacer: \n Nuevo cliente-1 \n Soy cliente-3 \n Salir -0");
@@ -24,6 +25,8 @@ public class ClienteView {
                     String pedirPass= registroCliente.pedirPass();
 
                     return gestionCliente.comprobarCliente(pedirDni,pedirPass);
+                case 0:
+                    return cliente = gestionCliente.clienteDefault();
             }
             return null;
 

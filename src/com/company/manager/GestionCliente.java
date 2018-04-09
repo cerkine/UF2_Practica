@@ -4,6 +4,8 @@ import com.company.model.Cliente;
 import com.company.view.RegistroCliente;
 public class GestionCliente {
     Cliente []clientes = new Cliente[100];
+
+
     public Cliente cargarCliente(){
         for (int i = 0; i < clientes.length; i++) {
             if (clientes[i] == null) {
@@ -19,12 +21,20 @@ public class GestionCliente {
             if (clientes[i]!=null && clientes[i].DNI.equals(comdni) && clientes[i].pass.equals(compass)) {
                 existir= true;
                 return clientes[i];
+
             }
         }
         if (!existir){
             System.out.println("Usuario/Contraseña  INCORRECTO");
         }
         return  null;
+    }
+
+    public Cliente clienteDefault () {
+        clientes[99] = new Cliente();
+        clientes[99].DNI="0";
+        clientes[99].pass="0";
+        return  clientes[99];
     }
 //    public Cliente cargarCliente2(int decisionS){
 //        switch (decisionS) {
