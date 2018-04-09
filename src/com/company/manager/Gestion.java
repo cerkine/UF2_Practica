@@ -19,7 +19,6 @@ public class Gestion {
 
 //        atraccion.cargarSeccion(seccion[0]);
 
-
         for (int i = 0; i < seccion.length; i++) {
             for (int j = 0; j < gestionAtraccion.lista.length; j++) {
                 if (seccion[i].getCode_place() == gestionAtraccion.lista[j].code_place) {
