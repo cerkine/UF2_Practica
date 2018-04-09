@@ -2,7 +2,7 @@ package com.company.model;
 
 public class CarreraCaballos extends ZonaArcade{
 
-    @Override public void CambiarAtr(){
+    @Override public void cambiarAtr(){
         open = random.nextBoolean();
         maintenance = random.nextBoolean();
         minHeight = 1.10;
@@ -10,8 +10,8 @@ public class CarreraCaballos extends ZonaArcade{
         price = 2;
     }
 
-    @Override public void CargarSeccion(Seccion seccionPasada) {
-        super.CargarSeccion(seccionPasada);
+    @Override public void cargarSeccion(Seccion seccionPasada) {
+        super.cargarSeccion(seccionPasada);
 
     }
 }

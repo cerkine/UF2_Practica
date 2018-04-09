@@ -5,7 +5,7 @@ import java.util.Random;
 public class Arcade extends Atraccion {
     Random random = new Random();
 
-    @Override public void CambiarAtr(){
+    @Override public void cambiarAtr(){
         open = random.nextBoolean();
         maintenance = random.nextBoolean();
         minHeight = 1.10;
@@ -13,8 +13,8 @@ public class Arcade extends Atraccion {
         price = 2;
     }
 
-    @Override public void CargarSeccion(Seccion seccionPasada) {
-        super.CargarSeccion(seccionPasada);
+    @Override public void cargarSeccion(Seccion seccionPasada) {
+        super.cargarSeccion(seccionPasada);
 
     }
 

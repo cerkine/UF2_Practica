@@ -10,11 +10,11 @@ public class Atraccion {
     public int code_place;
 
 
-    public void CambiarAtr () {
+    public void cambiarAtr() {
 
     }
 
-    public void CargarSeccion(Seccion seccionPasada){
+    public void cargarSeccion(Seccion seccionPasada){
         seccion=seccionPasada;
     }
 

@@ -61,14 +61,5 @@ public class RegistroCliente {
         return scanner.nextLine();
 
     }
-    public void mostrardatos(Cliente cliente){
 
-        System.out.println("Tus Datos");
-        System.out.println();
-        System.out.println("Nombre: "+cliente.name);
-        System.out.println("Apellidos: "+cliente.subname);
-        System.out.println("DNI: "+cliente.DNI);
-        System.out.println("Socio: "+cliente.subscrption);
-
-    }
 }

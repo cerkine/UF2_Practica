@@ -6,7 +6,7 @@ public class MontañaRusa extends Atraccion {
 
     Random random = new Random();
 
-    @Override public void CambiarAtr(){
+    @Override public void cambiarAtr(){
         open = random.nextBoolean();
         maintenance = random.nextBoolean();
         minHeight = 1.20;
@@ -14,8 +14,8 @@ public class MontañaRusa extends Atraccion {
         price = 5;
     }
 
-    @Override public void CargarSeccion(Seccion seccionPasada) {
-        super.CargarSeccion(seccionPasada);
+    @Override public void cargarSeccion(Seccion seccionPasada) {
+        super.cargarSeccion(seccionPasada);
 
     }
 
