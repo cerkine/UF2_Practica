@@ -3,11 +3,13 @@ package com.company.view;
 import com.company.Main;
 import com.company.model.Cliente;
 import com.company.model.Donacion;
+import com.company.view.widget.EditText;
 
 import java.util.Scanner;
 
 public class RegistroCliente {
     Scanner scanner = new Scanner(System.in);
+    EditText editText = new EditText();
     PantallaDonacion pantalladonacion = new PantallaDonacion();
     Donacion donacion;
 
@@ -17,8 +19,8 @@ public class RegistroCliente {
         System.out.println("Como te llamas");
         cliente.name = scanner.nextLine();
 
-        System.out.println("Introduce tus apellidos");
-        cliente.subname = scanner.nextLine();
+       // System.out.println("Introduce tus apellidos");
+        cliente.subname = editText.read("Introduce tus aplliedos"); //scanner.nextLine();
 
         System.out.println("Introduce tu DNI");
         cliente.DNI = scanner.nextLine();

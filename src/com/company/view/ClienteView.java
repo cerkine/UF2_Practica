@@ -26,7 +26,7 @@ public class ClienteView {
 
                     return gestionCliente.comprobarCliente(pedirDni,pedirPass);
                 case 0:
-                    return cliente = gestionCliente.clienteDefault();
+                    return gestionCliente.clienteDefault();
             }
             return null;
 
