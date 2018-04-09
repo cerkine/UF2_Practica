@@ -13,12 +13,13 @@ public class MenuEleccionCliente {
     ViewAlturaAtraccionCliente viewAlturaAtraccionCliente= new ViewAlturaAtraccionCliente();
     Entrada entrada = new Entrada();
     GestionConsulta consulta = new GestionConsulta();
-    public void menuCliente(Cliente cliente, Atraccion[] lista, GestionAtraccion gestionAtraccion){
+    public int menuCliente(Cliente cliente, Atraccion[] lista, GestionAtraccion gestionAtraccion){
         System.out.println("Que quieres hacer ?");
         System.out.println("1) Mirar las atracciones que estan abiertas");
         System.out.println("2) Mirar a las atracciones que puede entrar");
         System.out.println("3) Consultar una atraccion especifica");
         System.out.println("4) Imprimir entrada");
+        System.out.println("\n \n \n 0) Salir");
         opcion = scanner.nextInt();
         scanner.nextLine();
 
@@ -35,6 +36,7 @@ public class MenuEleccionCliente {
               entrada.imprimirentrada(cliente);
               break;
       }
+      return opcion;
     }
 
 }

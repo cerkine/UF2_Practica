@@ -31,7 +31,10 @@ public class Main {
             bien la contraseña*/
 
         MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();
-        menuEleccionCliente.menuCliente(cliente,gestionAtraccion.lista, gestionAtraccion);
+        int opcioncliente;
+        do{
+            opcioncliente= menuEleccionCliente.menuCliente(cliente,gestionAtraccion.lista, gestionAtraccion);
+        }while (opcioncliente!=0);
     }
 
 }
