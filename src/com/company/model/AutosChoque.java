@@ -1,11 +1,11 @@
-package com.company;
+package com.company.model;
 
 import java.util.Random;
 
 public class AutosChoque extends Atraccion{
     Random random = new Random();
 
-    @Override void CambiarAtr(){
+    @Override public void cambiarAtr(){
         open = random.nextBoolean();
         maintenance = random.nextBoolean();
         minHeight = 0;
@@ -13,8 +13,8 @@ public class AutosChoque extends Atraccion{
         price = 1;
     }
 
-    @Override void CargarSeccion(Seccion seccionPasada) {
-        super.CargarSeccion(seccionPasada);
+    @Override public void cargarSeccion(Seccion seccionPasada) {
+        super.cargarSeccion(seccionPasada);
 
     }
 }
