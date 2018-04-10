@@ -38,6 +38,8 @@ public class GestionCliente {
         clientes[99].height=1.70;
         return  clientes[99];
     }
+
+
 //    public Cliente cargarCliente2(int decisionS){
 //        switch (decisionS) {
 //            case 1:
