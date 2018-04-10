@@ -3,6 +3,7 @@ package com.company.view;
 import com.company.Main;
 import com.company.model.Cliente;
 import com.company.model.Donacion;
+import com.company.view.widget.EditInt;
 import com.company.view.widget.EditText;
 
 import java.util.Scanner;
@@ -12,27 +13,27 @@ public class RegistroCliente {
     EditText editText = new EditText();
     PantallaDonacion pantalladonacion = new PantallaDonacion();
     Donacion donacion;
+    EditInt editInt = new EditInt();
 
     public Cliente pedirDatos(Cliente cliente){
         System.out.println("INTRODUCE TUS DATOS");
         System.out.println();
-        System.out.println("Como te llamas");
-        cliente.name = scanner.nextLine();
 
-       // System.out.println("Introduce tus apellidos");
-        cliente.subname = editText.read("Introduce tus aplliedos"); //scanner.nextLine();
+        cliente.name = editText.read("Introduce tu Nombre");
 
-        System.out.println("Introduce tu DNI");
-        cliente.DNI = scanner.nextLine();
+        cliente.subname = editText.read("Introduce tus Aplliedos"); //scanner.nextLine();
 
-        System.out.println("Introduce tu pass");
-        cliente.pass = scanner.nextLine();
 
-        System.out.println("Intriduce tu email");
-        cliente.mail = scanner.nextLine();
+        cliente.DNI = editText.read("Introduce tu DNI");
 
-        System.out.println("¿Que edad tienes?");
-        cliente.ages = scanner.nextInt();scanner.nextLine();
+
+        cliente.pass = editText.read("Introduce tu Pass");
+
+
+        cliente.mail = editText.read("Introduce tu Email");
+
+
+        cliente.ages = editInt.read("Introduce tu Edad");scanner.nextLine();
 
         System.out.println("Cuanto mides de alto?");
         cliente.height = scanner.nextDouble();scanner.nextLine();
@@ -63,3 +64,4 @@ public class RegistroCliente {
     }
 
 }
+
