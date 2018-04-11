@@ -17,19 +17,21 @@ public class GestionCliente {
     }
 
     public Cliente comprobarCliente(String comdni, String compass){
-        boolean existir=false;
-            for (int i = 0; i <clientes.length ; i++) {
-            if (clientes[i]!=null && clientes[i].DNI.equals(comdni) && clientes[i].pass.equals(compass)) {
-                existir= true;
-                return clientes[i];
 
+            boolean existir = false;
+            for (int i = 0; i < clientes.length; i++) {
+                if (clientes[i] != null && clientes[i].DNI.equals(comdni) && clientes[i].pass.equals(compass)) {
+                    existir = true;
+                    return clientes[i];
+
+                }
             }
-        }
-        if (!existir){
-            System.out.println("Usuario/Contraseña  INCORRECTO");
-        }
-        return  null;
+            if (!existir) {
+                System.out.println("Usuario/Contraseña  INCORRECTO");
+            }
+            return null;
     }
+
 
     public Cliente clienteDefault () {
         clientes[99] = new Cliente();
