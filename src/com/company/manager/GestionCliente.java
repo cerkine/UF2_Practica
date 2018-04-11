@@ -38,6 +38,12 @@ public class GestionCliente {
         clientes[99].height=1.70;
         return  clientes[99];
     }
+    public Cliente adminDefault () {
+        clientes[98] = new Cliente();
+        clientes[98].DNI="admin";
+        clientes[98].pass="admin";
+        return  clientes[98];
+    }
 //    public Cliente cargarCliente2(int decisionS){
 //        switch (decisionS) {
 //            case 1:
