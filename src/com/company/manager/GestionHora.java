@@ -2,14 +2,15 @@ package com.company.manager;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 
 public class GestionHora {
-    public void hora() {
+    public static int horaActual() {
 
-        while(true) {
-            DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-            Date date = new Date();
-        }
+        LocalDateTime ldt = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
+        return ldt.getHour();
     }
 }

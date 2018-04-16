@@ -1,12 +1,14 @@
 package com.company.model;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.Random;
 
 public class AutosChoque extends Atraccion{
     Random random = new Random();
 
     @Override public void cambiarAtr(){
-        open = random.nextBoolean();
+        open = 10;
         maintenance = random.nextBoolean();
         minHeight = 0;
         maxHeight = 1.60;
