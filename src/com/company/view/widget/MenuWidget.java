@@ -25,7 +25,6 @@ public class MenuWidget {
             if (opcion > opciones.length) {
                 mensaje.mostrarError("Error, esa opcion no es correcta.");
             } else {
-                System.out.print(opcion+opciones[opcion]);
                 esValida = false;
             }
         }while (esValida);
