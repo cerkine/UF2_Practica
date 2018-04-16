@@ -1,9 +1,12 @@
 package com.company.model;
 
+import java.text.ParseException;
+import java.util.Date;
+
 public class CarreraCaballos extends ZonaArcade{
 
     @Override public void cambiarAtr(){
-        open = random.nextBoolean();
+        open = 10;
         maintenance = random.nextBoolean();
         minHeight = 1.10;
         maxHeight = 2.30;

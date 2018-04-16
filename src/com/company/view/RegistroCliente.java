@@ -1,6 +1,5 @@
 package com.company.view;
 
-import com.company.Main;
 import com.company.model.Cliente;
 import com.company.model.Donacion;
 import com.company.view.widget.EditText;
