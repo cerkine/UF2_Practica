@@ -3,46 +3,42 @@ package com.company.view;
 import com.company.Main;
 import com.company.model.Cliente;
 import com.company.model.Donacion;
+import com.company.view.widget.EditText;
+import com.company.view.widget.WindowTitle;
 
 import java.util.Scanner;
 
 public class RegistroCliente {
     Scanner scanner = new Scanner(System.in);
+    EditText editText = new EditText();
     PantallaDonacion pantalladonacion = new PantallaDonacion();
     Donacion donacion;
 
     public Cliente pedirDatos(Cliente cliente){
+
+        WindowTitle windowTitle = new WindowTitle();
+
+        windowTitle.show("REGISTRO DE CLIENTE");
+
         System.out.println("INTRODUCE TUS DATOS");
         System.out.println();
-        System.out.println("Como te llamas");
-        cliente.name = scanner.nextLine();
 
-        System.out.println("Introduce tus apellidos");
-        cliente.subname = scanner.nextLine();
-
-        System.out.println("Introduce tu DNI");
-        cliente.DNI = scanner.nextLine();
-
-        System.out.println("Introduce tu pass");
-        cliente.pass = scanner.nextLine();
-
-        System.out.println("Intriduce tu email");
-        cliente.mail = scanner.nextLine();
-
-        System.out.println("¿Que edad tienes?");
-        cliente.ages = scanner.nextInt();scanner.nextLine();
-
-        System.out.println("Cuanto mides de alto?");
-        cliente.height = scanner.nextDouble();scanner.nextLine();
+        cliente.name = editText.texto("Introduce tu nombre:");
+        cliente.subname = editText.texto("Introduce tu apellido:");
+        cliente.DNI = editText.texto("Introduce tu DNI:");
+        cliente.pass = editText.texto("Introduce tu pass");
+        cliente.mail = editText.texto("Intriduce tu email");
+        cliente.ages = editText.numero("¿Que edad tienes?");
+        cliente.height = editText.altura("Cuanto mides de alto?");
 
         if (cliente.ages > 17) {
-            System.out.println("¿Quieres hacerte la tarjeta de socio?");
+            System.out.println("¿Quieres hacerte la tarjeta de socio? (Pon si para confirmar)");
 
             if (scanner.nextLine().equals("si")) {
                 cliente.subscrption = true;
             }
 
-            System.out.println("¿Quieres donar?");
+            System.out.println("¿Quieres donar? (Pon si para confirmar)");
             if (scanner.nextLine().equals("si")) {
                 cliente.donation = true;
                 pantalladonacion.donar(cliente,donacion);
@@ -51,13 +47,12 @@ public class RegistroCliente {
         return cliente;
     }
     public String pedirDni () {
-        System.out.println("Dni");
-        return scanner.nextLine();
+        return editText.texto("DNI");
+
 
     }
     public String pedirPass (){
-        System.out.println("Pass");
-        return scanner.nextLine();
+        return editText.texto("Pass");
 
     }
     public void mostrardatos(Cliente cliente){
