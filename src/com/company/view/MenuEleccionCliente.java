@@ -1,6 +1,5 @@
 package com.company.view;
 
-import com.company.manager.GestionHora;
 import com.company.model.Atraccion;
 import com.company.model.Cliente;
 

@@ -1,5 +1,4 @@
 package com.company.view;
-import com.company.Main;
 import com.company.model.Atraccion;
 import com.company.model.Cliente;
 
