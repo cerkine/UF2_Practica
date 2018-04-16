@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class MenuWidget {
     WindowTitle windowTitle = new WindowTitle();
+    Mensaje mensaje = new Mensaje();
     Scanner scanner = new Scanner(System.in);
     boolean esValida = true;
     public int opcion = 0;
@@ -22,7 +23,7 @@ public class MenuWidget {
         do {
             opcion = scanner.nextInt();
             if (opcion > opciones.length) {
-                System.out.println("Error, esa opcion no es correcta.");
+                mensaje.mostrarError("Error, esa opcion no es correcta.");
             } else {
                 System.out.print(opcion+opciones[opcion]);
                 esValida = false;
