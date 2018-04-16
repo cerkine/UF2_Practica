@@ -1,9 +1,12 @@
-package com.company;
+package com.company.view.games;
+
+import com.company.model.Cliente;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Ruleta {
+    Cliente cliente;
 
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
@@ -26,19 +29,20 @@ public class Ruleta {
     final int PASA = 11;
 
     int[] apuestasNumeros = new int[37];
-
+    int money;
     int totalApostado;
     int apuestaInicial;
     int numeroapuesta;
     int numero;
     int ganado;
 
-    int money = 100;  // balance de dinero
+      // balance de dinero
 
     int bola = 0;
     boolean esRoja = false;
 
-    void start() {
+    public void start(Cliente cliente) {
+        money = cliente.dinero;
         System.out.println("RULETA");
 
         do {

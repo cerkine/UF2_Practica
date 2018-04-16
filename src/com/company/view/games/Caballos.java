@@ -1,4 +1,4 @@
-package com.company;
+package com.company.view.games;
 
 import com.sun.org.apache.regexp.internal.RE;
 
@@ -21,7 +21,7 @@ public class Caballos {
     int nombre;
 
 
-    void start(){
+    public void start(){
 
 
         System.out.println("CARRERA DE CABALLOS");

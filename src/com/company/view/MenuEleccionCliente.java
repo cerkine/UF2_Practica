@@ -12,6 +12,7 @@ public class MenuEleccionCliente {
     Entrada entrada = new Entrada();
     ViewConsulaApertura consulta = new ViewConsulaApertura();
     ViewClienteAtraccion viewClienteAtraccion = new ViewClienteAtraccion();
+    MenuJuegosAzar menuJuegosAzar = new MenuJuegosAzar();
     public int menuCliente(Cliente cliente, Atraccion[] lista){
         System.out.println("Que quieres hacer ?");
         System.out.println("1) Mirar las atracciones que estan abiertas");
@@ -34,6 +35,9 @@ public class MenuEleccionCliente {
               break;
           case 4:
               entrada.imprimirentrada(cliente);
+              break;
+          case 5:
+              menuJuegosAzar.start(cliente);
               break;
       }
       return opcion;

@@ -14,6 +14,7 @@ public class Cliente {
     public boolean donation =false;
     public int donate;
     public double height;
+    public int dinero;
 
 }
 

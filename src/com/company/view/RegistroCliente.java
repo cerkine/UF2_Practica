@@ -35,6 +35,8 @@ public class RegistroCliente {
 
         cliente.ages = editInt.read("Introduce tu Edad");scanner.nextLine();
 
+        cliente.dinero= editInt.read("Cuanto dinero tienes en la cartera");scanner.nextLine();
+
         System.out.println("Cuanto mides de alto?");
         cliente.height = scanner.nextDouble();scanner.nextLine();
 

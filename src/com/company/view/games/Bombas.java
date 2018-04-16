@@ -1,4 +1,4 @@
-package com.company;
+package com.company.view.games;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -21,7 +21,7 @@ public class Bombas {
     int dinero = 100;
     int apuesta;
 
-    void start(){
+    public void start(){
         do {
             System.out.println("TU DINERO = " + dinero);
             pedirApuesta();

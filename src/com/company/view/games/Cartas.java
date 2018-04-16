@@ -1,4 +1,4 @@
-package com.company;
+package com.company.view.games;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class Cartas {
     final int PLAYER = 0;
     final int CRUPIER = 1;
 
-    void start(){
+    public void start(){
         System.out.println("CARTAS");
 
         do {

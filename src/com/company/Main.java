@@ -14,7 +14,6 @@ public class Main {
         // write your code here
         GestionAtraccion gestionAtraccion = new GestionAtraccion();
         gestionAtraccion.change();
-//        ViewConsulaApertura gestionConsulta = new ViewConsulaApertura();
         Scanner scanner = new Scanner(System.in);
 
         Gestion gestion = new Gestion();
