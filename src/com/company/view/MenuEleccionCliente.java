@@ -1,10 +1,8 @@
 package com.company.view;
 
-import com.company.manager.GestionAtraccion;
 import com.company.model.Atraccion;
 import com.company.model.Cliente;
 import com.company.view.widget.MenuWidget;
-import com.company.view.widget.WindowTitle;
 
 import java.util.Scanner;
 
@@ -16,6 +14,7 @@ public class MenuEleccionCliente {
     ViewConsulaApertura consulta = new ViewConsulaApertura();
     MenuWidget menuWidget = new MenuWidget();
     MenuJuegosAzar menuJuegosAzar = new MenuJuegosAzar();
+    ViewClienteAtraccion viewClienteAtraccion = new ViewClienteAtraccion();
     public int  menuCliente(Cliente cliente, Atraccion[] lista){
         menuWidget.crearMenu("Que quieres hacer","Mirar las atrraciones que estan abiertas","Mirar a las que puedes entrar","Constular una atraccion especifica","Imprimir una entrada",
                 "Jugar a juegos de azar" +" CON TU DINERO");
@@ -25,9 +24,10 @@ public class MenuEleccionCliente {
               consulta.consulta(lista);
               break;
           case 2:
-              viewAlturaAtraccionCliente.CompararAltura(cliente,lista);
+              viewAlturaAtraccionCliente.compararAltura(cliente,lista);
               break;
           case 3:
+              viewClienteAtraccion.mirarAtraccion(lista,cliente,consulta,viewAlturaAtraccionCliente);
               break;
           case 4:
               entrada.imprimirentrada(cliente);

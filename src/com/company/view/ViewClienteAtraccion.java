@@ -28,7 +28,7 @@ public class ViewClienteAtraccion {
 
         viewConsulaApertura.consulta(atraccion);
         System.out.println();
-        viewAlturaAtraccionCliente.CompararAltura(cliente,atraccion);
+        viewAlturaAtraccionCliente.compararAltura(cliente,atraccion);
         System.out.println();
 
     }

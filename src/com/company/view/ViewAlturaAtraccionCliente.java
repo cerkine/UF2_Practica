@@ -1,12 +1,11 @@
 package com.company.view;
-import com.company.Main;
 import com.company.model.Atraccion;
 import com.company.model.Cliente;
 import com.company.view.widget.Mensaje;
 
 public class ViewAlturaAtraccionCliente {
 
-    public void CompararAltura(Cliente cliente, Atraccion[] lista ){
+    public void compararAltura(Cliente cliente, Atraccion[] lista ){
         Mensaje mensaje = new Mensaje();
 
         for (int i = 0; i <lista.length ; i++) {
