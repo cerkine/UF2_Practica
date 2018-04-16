@@ -2,6 +2,8 @@ package com.company.view;
 
 import com.company.manager.GestionCliente;
 import com.company.model.Cliente;
+import com.company.view.widget.MenuWidget;
+import com.company.view.widget.WindowTitle;
 
 import java.util.Scanner;
 
@@ -10,13 +12,14 @@ public class ViewRegistroAcceso {
     Scanner scanner =new Scanner(System.in);
     GestionCliente gestionCliente = new GestionCliente();
     RegistroCliente registroCliente = new RegistroCliente();
-
+    MenuWidget menuWidget = new MenuWidget();
     public Cliente decision() {
 
-            System.out.println("Que deseas hacer: \n Nuevo cliente-1 \n Soy cliente-3 \n Salir -0");
-            decisionS = scanner.nextInt();scanner.nextLine();
 
-            switch (decisionS) {
+            menuWidget.crearMenu("Bienvenio, ¿Que quieres hacer?","Nuevo cliente", "Soy Cliente", "Salir");
+
+
+            switch (menuWidget.opcion) {
                 case 1:
                     Cliente cliente = gestionCliente.cargarCliente();
                     return registroCliente.pedirDatos(cliente);

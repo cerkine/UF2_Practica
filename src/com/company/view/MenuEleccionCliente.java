@@ -1,7 +1,10 @@
 package com.company.view;
 
+import com.company.manager.GestionAtraccion;
+import com.company.manager.GestionConsulta;
 import com.company.model.Atraccion;
 import com.company.model.Cliente;
+import com.company.view.widget.WindowTitle;
 
 import java.util.Scanner;
 
@@ -10,37 +13,30 @@ public class MenuEleccionCliente {
     Scanner scanner = new Scanner(System.in);
     ViewAlturaAtraccionCliente viewAlturaAtraccionCliente= new ViewAlturaAtraccionCliente();
     Entrada entrada = new Entrada();
-    ViewConsulaApertura consulta = new ViewConsulaApertura();
-    ViewClienteAtraccion viewClienteAtraccion = new ViewClienteAtraccion();
-    MenuJuegosAzar menuJuegosAzar = new MenuJuegosAzar();
-    public int menuCliente(Cliente cliente, Atraccion[] lista){
-        System.out.println("Que quieres hacer ?");
+    GestionConsulta consulta = new GestionConsulta();
+    WindowTitle windowTitle = new WindowTitle();
+    public void menuCliente(Cliente cliente, Atraccion[] lista, GestionAtraccion gestionAtraccion){
+        windowTitle.show("Que quieres hacer ?");
         System.out.println("1) Mirar las atracciones que estan abiertas");
         System.out.println("2) Mirar a las atracciones que puede entrar");
         System.out.println("3) Consultar una atraccion especifica");
         System.out.println("4) Imprimir entrada");
-        System.out.println("\n \n \n 0) Salir");
         opcion = scanner.nextInt();
         scanner.nextLine();
 
       switch (opcion){
           case 1:
-              consulta.consulta(lista);
+              consulta.Consulta(gestionAtraccion);
               break;
           case 2:
-              viewAlturaAtraccionCliente.compararAltura(cliente,lista);
+              viewAlturaAtraccionCliente.CompararAltura(cliente,lista);
               break;
           case 3:
-              viewClienteAtraccion.mirarAtraccion(lista,cliente,consulta,viewAlturaAtraccionCliente);
               break;
           case 4:
               entrada.imprimirentrada(cliente);
               break;
-          case 5:
-              menuJuegosAzar.start(cliente);
-              break;
       }
-      return opcion;
     }
 
 }
