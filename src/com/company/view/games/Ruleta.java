@@ -65,6 +65,7 @@ public class Ruleta {
 
         System.out.println("Presiona INTRO para volver...");
         scanner.nextLine();
+        cliente.dinero=money;
     }
 
     void hacerApuestas(){

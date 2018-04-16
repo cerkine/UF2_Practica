@@ -1,5 +1,6 @@
 package com.company.view.games;
 
+import com.company.model.Cliente;
 import com.sun.org.apache.regexp.internal.RE;
 
 import java.util.Random;
@@ -11,7 +12,7 @@ public class Caballos {
     Scanner scanner = new Scanner(System.in);
     final String[] symbols = {"\033[31m🏇\033[0m" , "\033[1;33m🐎\033[0m", "⬜", "⬛", "🏁"};
     int apuesta;
-    int dinero = 100;
+    int dinero;
     int caballoApostado;
     int ganador;
     int [] posicion = new int [4];
@@ -21,8 +22,8 @@ public class Caballos {
     int nombre;
 
 
-    public void start(){
-
+    public void start(Cliente cliente){
+        dinero= cliente.dinero;
 
         System.out.println("CARRERA DE CABALLOS");
         do {
@@ -66,6 +67,7 @@ public class Caballos {
         System.out.println("ADIOS!");
         System.out.println("Presiona INTRO para volver...");
         scanner.nextLine();
+        cliente.dinero=dinero;
     }
 
     void pedirApuesta(){

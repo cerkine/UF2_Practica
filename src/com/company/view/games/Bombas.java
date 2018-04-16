@@ -1,5 +1,7 @@
 package com.company.view.games;
 
+import com.company.model.Cliente;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -21,7 +23,8 @@ public class Bombas {
     int dinero = 100;
     int apuesta;
 
-    public void start(){
+    public void start(Cliente cliente){
+        dinero=cliente.dinero;
         do {
             System.out.println("TU DINERO = " + dinero);
             pedirApuesta();
@@ -44,6 +47,7 @@ public class Bombas {
 
         System.out.println("Presiona INTRO para volver...");
         scanner.nextLine();
+        cliente.dinero=dinero;
     }
 
     void pedirApuesta(){

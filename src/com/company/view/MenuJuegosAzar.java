@@ -5,6 +5,7 @@ import com.company.view.games.Bombas;
 import com.company.view.games.Caballos;
 import com.company.view.games.Cartas;
 import com.company.view.games.Ruleta;
+import com.company.view.widget.MenuWidget;
 import com.sun.javafx.css.Rule;
 
 import java.util.Scanner;
@@ -16,20 +17,21 @@ public class MenuJuegosAzar {
     Caballos caballos = new Caballos();
     Cartas cartas = new Cartas();
     Ruleta ruleta = new Ruleta();
-    public void start(Cliente cliente){
+    MenuWidget menuWidget = new MenuWidget();
 
-        char opcion = scanner.nextLine().charAt(0);
-        switch (opcion){
-            case '1':
-                bombas.start();
+    public void start(Cliente cliente){
+        menuWidget.crearMenu("con que quieres perder dinero","Bombas","Caballos","Cartas","Ruleta");
+        switch (menuWidget.opcion){
+            case 1:
+                bombas.start(cliente);
                 break;
-            case '2':
-                caballos.start();
+            case 2:
+                caballos.start(cliente);
                 break;
-            case '3':
-                cartas.start();
+            case 3:
+                cartas.start(cliente);
                 break;
-            case '4':
+            case 4:
                 ruleta.start(cliente);
                 break;
         }

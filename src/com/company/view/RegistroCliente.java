@@ -30,6 +30,7 @@ public class RegistroCliente {
         cliente.mail = editText.texto("Intriduce tu email");
         cliente.ages = editText.numero("¿Que edad tienes?");
         cliente.height = editText.altura("Cuanto mides de alto?");
+        cliente.dinero=editText.numero("Cuanto money hay en tu cartera");
 
         if (cliente.ages > 17) {
             System.out.println("¿Quieres hacerte la tarjeta de socio? (Pon si para confirmar)");

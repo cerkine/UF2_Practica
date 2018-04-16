@@ -1,5 +1,7 @@
 package com.company.view.games;
 
+import com.company.model.Cliente;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,14 +10,15 @@ public class Cartas {
     Scanner scanner = new Scanner(System.in);
     final String[] baraja = {"🂡","🂢","🂣","🂤","🂥","🂦","🂧","🂨","🂩","🂫","🂭","🂮"};
 
-    int money = 100;
+    int money;
     int apuesta;
 
     int[] puntos = new int[2];
     final int PLAYER = 0;
     final int CRUPIER = 1;
 
-    public void start(){
+    public void start(Cliente cliente){
+        money=cliente.dinero;
         System.out.println("CARTAS");
 
         do {
@@ -33,6 +36,7 @@ public class Cartas {
         System.out.println("ADIOS!");
         System.out.println("Presiona INTRO para volver...");
         scanner.nextLine();
+        cliente.dinero=money;
     }
 
 

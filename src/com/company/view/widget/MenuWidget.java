@@ -14,18 +14,16 @@ public class MenuWidget {
         windowTitle.show(titulo);
 
         for (int i = 0; i < opciones.length ; i++) {
-            System.out.println( i +"-"+ opciones[i]);
+            System.out.println( i+1 +"-"+ opciones[i]);
 
         }
-
-        windowTitle.show("¿QUE QUIERES HACER?");
+        System.out.println("\n\n\n0-Salir");
 
         do {
             opcion = scanner.nextInt();
             if (opcion > opciones.length) {
                 mensaje.mostrarError("Error, esa opcion no es correcta.");
             } else {
-                System.out.print(opcion+opciones[opcion]);
                 esValida = false;
             }
         }while (esValida);

@@ -16,19 +16,19 @@ public class ViewRegistroAcceso {
     public Cliente decision() {
 
 
-            menuWidget.crearMenu("Bienvenio, ¿Que quieres hacer?","Nuevo cliente", "Soy Cliente", "Salir");
+            menuWidget.crearMenu("Bienvenio, ¿Que quieres hacer?","Nuevo cliente", "Soy Cliente","ClienteDefault");
 
 
             switch (menuWidget.opcion) {
                 case 1:
                     Cliente cliente = gestionCliente.cargarCliente();
                     return registroCliente.pedirDatos(cliente);
-                case 3:
+                case 2:
                     String pedirDni= registroCliente.pedirDni();
                     String pedirPass= registroCliente.pedirPass();
 
                     return gestionCliente.comprobarCliente(pedirDni,pedirPass);
-                case 0:
+                case 3:
                     return gestionCliente.clienteDefault();
             }
             return null;
