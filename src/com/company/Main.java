@@ -1,6 +1,5 @@
 package com.company;
 import com.company.manager.Gestion;
-import com.company.manager.GestionHora;
 import com.company.view.MenuEleccionCliente;
 import com.company.manager.GestionAtraccion;
 import com.company.model.Cliente;
@@ -15,6 +14,7 @@ public class Main {
         // write your code here
         GestionAtraccion gestionAtraccion = new GestionAtraccion();
         gestionAtraccion.change();
+//        ViewConsulaApertura gestionConsulta = new ViewConsulaApertura();
         Scanner scanner = new Scanner(System.in);
 
         Gestion gestion = new Gestion();
@@ -23,7 +23,6 @@ public class Main {
         ViewRegistroAcceso viewRegistroAcceso = new ViewRegistroAcceso();
 
         cliente= viewRegistroAcceso.decision();/*
-
             Esto puede llegar a dar un null, podemos hacer que el cliente[99] lo cargemos, ponemos una variable boolean en cliente que sea null=false, si esto nos va a devolver un null, podemos iniciarliar
             ese cliente y lo cargamos con null true, aqui podmos hacer que si if(cliente.null) haga una cosa y sino pos que haga otra, asi nos evitamos que el main pete si no hay espacio de usuario o si no introducen
             bien la contraseña*/
@@ -35,7 +34,20 @@ public class Main {
         do{
             opcioncliente= menuEleccionCliente.menuCliente(cliente,gestionAtraccion.lista);
         }while (opcioncliente!=0);
+        if (!"admin".equals(cliente.DNI)){
+            MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();
+            int opcion;
+            do {
+                opcion = menuEleccionCliente.menuCliente(cliente, gestionAtraccion.lista);
+            } while (opcion != 0);
+        }
+        else {
+            MenuAdminAtraccion menuAdminAtraccion = new MenuAdminAtraccion();
+            int opcion;
+            do {
+                opcion = menuAdminAtraccion.menuAdmin(gestionAtraccion.lista);
+            } while (opcion != 0);
+        }
     }
-
 
 }
