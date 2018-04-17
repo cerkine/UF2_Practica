@@ -6,13 +6,12 @@ public class GestionCambiarMantenimiento {
 
     public Boolean cambiarMantenimiento (int opcion ,Atraccion[] lista){
         int  i = opcion;
-        if (lista[i].maintenance == false){
+        if (!lista[i].maintenance){
                     return true;
 
                 }
                 else{
                     return false;
-
                 }
     }
 }

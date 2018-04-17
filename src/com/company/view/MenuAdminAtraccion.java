@@ -18,10 +18,12 @@ public class MenuAdminAtraccion {
         System.out.println("\n \n \n 0) Salir");
         opcion = scanner.nextInt();
         scanner.nextLine();
-
+        int opcionDev;
         switch (opcion){
             case 1:
-                viewAdminAtraccion.mirarAtraccion(lista);
+                do{
+                    opcionDev=viewAdminAtraccion.mirarAtraccion(lista);
+                }while (opcionDev!=0);
                 break;
         }
         return opcion;
