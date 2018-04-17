@@ -2,6 +2,7 @@ package com.company.view;
 
 import com.company.manager.GestionCliente;
 import com.company.model.Cliente;
+import com.company.view.widget.Mensaje;
 import com.company.view.widget.MenuWidget;
 import com.company.view.widget.WindowTitle;
 
@@ -10,13 +11,13 @@ import java.util.Scanner;
 public class ViewRegistroAcceso {
     public int decisionS;
     Scanner scanner =new Scanner(System.in);
-    GestionCliente gestionCliente = new GestionCliente();
+    public GestionCliente gestionCliente = new GestionCliente();
     RegistroCliente registroCliente = new RegistroCliente();
-    MenuWidget menuWidget = new MenuWidget();
+    public MenuWidget menuWidget = new MenuWidget();
+    Mensaje mensaje = new Mensaje();
     public Cliente decision() {
             gestionCliente.adminDefault();
-            System.out.println("Que deseas hacer: \n Nuevo cliente-1 \n Soy cliente-3 \n Salir -0");
-            decisionS = scanner.nextInt();scanner.nextLine();
+
 
             menuWidget.crearMenu("Bienvenio, ¿Que quieres hacer?","Nuevo cliente", "Soy Cliente","ClienteDefault");
 
@@ -26,10 +27,17 @@ public class ViewRegistroAcceso {
                     Cliente cliente = gestionCliente.cargarCliente();
                     return registroCliente.pedirDatos(cliente);
                 case 2:
-                    String pedirDni= registroCliente.pedirDni();
-                    String pedirPass= registroCliente.pedirPass();
-
-                    return gestionCliente.comprobarCliente(pedirDni,pedirPass);
+                    do{
+                        String pedirDni= registroCliente.pedirDni();
+                        String pedirPass= registroCliente.pedirPass();
+                        cliente=gestionCliente.comprobarCliente(pedirDni,pedirPass);
+                        mensaje.mostrarError("Error Usuario \n Desea salir pulse 0 \n Volver a intentar 1");
+                        int opcion = scanner.nextInt();scanner.nextLine();
+                        if(opcion==0){
+                            break;
+                        }
+                    }while (cliente==null);
+                    return cliente;
                 case 3:
                     return gestionCliente.clienteDefault();
             }

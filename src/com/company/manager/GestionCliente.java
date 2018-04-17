@@ -3,7 +3,7 @@ package com.company.manager;
 import com.company.model.Cliente;
 import com.company.view.RegistroCliente;
 public class GestionCliente {
-    Cliente []clientes = new Cliente[100];
+    public Cliente []clientes = new Cliente[100];
 
 
     public Cliente cargarCliente(){
@@ -17,19 +17,12 @@ public class GestionCliente {
     }
 
     public Cliente comprobarCliente(String comdni, String compass){
-
-            boolean existir = false;
-            for (int i = 0; i < clientes.length; i++) {
+         for (int i = 0; i < clientes.length; i++) {
                 if (clientes[i] != null && clientes[i].DNI.equals(comdni) && clientes[i].pass.equals(compass)) {
-                    existir = true;
                     return clientes[i];
-
                 }
             }
-            if (!existir) {
-                System.out.println("Usuario/Contraseña  INCORRECTO");
-            }
-            return null;
+        return null;
     }
 
     public Cliente clienteDefault () {
