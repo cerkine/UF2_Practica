@@ -1,5 +1,6 @@
 package com.company;
 import com.company.manager.Gestion;
+import com.company.view.MenuAdminAtraccion;
 import com.company.view.MenuEleccionCliente;
 import com.company.manager.GestionAtraccion;
 import com.company.model.Cliente;
@@ -28,12 +29,7 @@ public class Main {
             bien la contraseña*/
 
 
-        MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();
 
-        int opcioncliente;
-        do{
-            opcioncliente= menuEleccionCliente.menuCliente(cliente,gestionAtraccion.lista);
-        }while (opcioncliente!=0);
         if (!"admin".equals(cliente.DNI)){
             MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();
             int opcion;
