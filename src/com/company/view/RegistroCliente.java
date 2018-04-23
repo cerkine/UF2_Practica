@@ -1,5 +1,6 @@
 package com.company.view;
 
+import com.company.manager.GestionCliente;
 import com.company.model.Cliente;
 import com.company.model.Donacion;
 import com.company.view.widget.EditText;
@@ -13,8 +14,8 @@ public class RegistroCliente {
     PantallaDonacion pantalladonacion = new PantallaDonacion();
     Donacion donacion;
 
-    public Cliente pedirDatos(Cliente cliente){
-
+    public void pedirDatos(){
+        Cliente cliente = GestionCliente.clienteLogeado;
         WindowTitle windowTitle = new WindowTitle();
 
         windowTitle.show("REGISTRO DE CLIENTE");
@@ -44,7 +45,6 @@ public class RegistroCliente {
                 pantalladonacion.donar(cliente,donacion);
             }
         }
-        return cliente;
     }
     public String pedirDni () {
         return editText.texto("DNI");

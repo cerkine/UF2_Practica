@@ -1,8 +1,5 @@
 package com.company.model;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class Atraccion {
     public int open;
     public boolean maintenance;

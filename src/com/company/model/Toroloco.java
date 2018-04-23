@@ -1,7 +1,5 @@
 package com.company.model;
 
-import java.text.ParseException;
-import java.util.Date;
 import java.util.Random;
 
 public class Toroloco extends Atraccion{

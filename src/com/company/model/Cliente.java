@@ -1,6 +1,5 @@
 package com.company.model;
 
-import java.util.Scanner;
 
 public class Cliente {
     public double cantidad;

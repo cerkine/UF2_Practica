@@ -1,37 +1,33 @@
 package com.company.view;
 
 import com.company.manager.GestionCliente;
-import com.company.model.Cliente;
 import com.company.view.widget.MenuWidget;
-import com.company.view.widget.WindowTitle;
-
-import java.util.Scanner;
 
 public class ViewRegistroAcceso {
-    public int decisionS;
-    Scanner scanner =new Scanner(System.in);
-    GestionCliente gestionCliente = new GestionCliente();
     RegistroCliente registroCliente = new RegistroCliente();
     MenuWidget menuWidget = new MenuWidget();
-    public Cliente decision() {
+    public void decision() {
 
 
             menuWidget.crearMenu("Bienvenio, ¿Que quieres hacer?","Nuevo cliente", "Soy Cliente","ClienteDefault");
-
-
-            switch (menuWidget.opcion) {
+            int opcion=menuWidget.opcion;
+        switch (opcion) {
                 case 1:
-                    Cliente cliente = gestionCliente.cargarCliente();
-                    return registroCliente.pedirDatos(cliente);
+                    GestionCliente.cargarCliente();
+                     registroCliente.pedirDatos();
+                     break;
                 case 2:
                     String pedirDni= registroCliente.pedirDni();
                     String pedirPass= registroCliente.pedirPass();
 
-                    return gestionCliente.comprobarCliente(pedirDni,pedirPass);
+                    GestionCliente.comprobarCliente(pedirDni,pedirPass);
+                    break;
+
                 case 3:
-                    return gestionCliente.clienteDefault();
+                    GestionCliente.clienteDefault();
+                    break;
             }
-            return null;
+
 
     }
 }

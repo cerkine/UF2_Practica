@@ -1,5 +1,6 @@
 package com.company.view;
 
+import com.company.manager.GestionCliente;
 import com.company.model.Cliente;
 
 import java.text.SimpleDateFormat;
@@ -15,8 +16,8 @@ public class Entrada {
     private Random random = new Random();
     String numCodigo= "4 0902  "+ random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10)+" "+random.nextInt(10) ;
 
-    void imprimirentrada(Cliente cliente) {
-
+    void imprimirentrada() {
+        Cliente cliente = GestionCliente.clienteLogeado;
         for (int i = 0; i < cliente.name.length() + cliente.subname.length() + 50; i++) {
             System.out.print("*");
         }

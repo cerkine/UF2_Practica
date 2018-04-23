@@ -5,7 +5,7 @@ import com.company.model.Seccion;
 
 public class Gestion {
 
-    public void cargarParque(GestionAtraccion gestionAtraccion) {
+    public static void cargarParque() {
 
 
         Seccion[] seccion = new Seccion[3];
@@ -17,20 +17,14 @@ public class Gestion {
         seccion[2].DatosSeccion(seccion[2], 2, 0.5, 3.8, "Bosque NO Prohibido");
         Atraccion atraccion = new Atraccion();
 
-//        atraccion.cargarSeccion(seccion[0]);
 
         for (int i = 0; i < seccion.length; i++) {
-            for (int j = 0; j < gestionAtraccion.lista.length; j++) {
-                if (seccion[i].getCode_place() == gestionAtraccion.lista[j].code_place) {
-                    gestionAtraccion.lista[j].seccion = seccion[i];
+            for (int j = 0; j < GestionAtraccion.lista.length; j++) {
+                if (seccion[i].getCode_place() == GestionAtraccion.lista[j].code_place) {
+                    GestionAtraccion.lista[j].seccion = seccion[i];
                 }
             }
         }
-
-
-//        System.out.println("Quieres consultar el estado de las atracciones yago");
-//
-//            atraccion.consulta();
 
 
 

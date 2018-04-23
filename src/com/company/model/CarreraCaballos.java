@@ -1,7 +1,5 @@
 package com.company.model;
 
-import java.text.ParseException;
-import java.util.Date;
 
 public class CarreraCaballos extends ZonaArcade{
 
