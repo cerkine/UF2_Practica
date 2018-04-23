@@ -15,7 +15,6 @@ public class ViewRegistroAcceso {
     MenuWidget menuWidget = new MenuWidget();
     public Cliente decision() {
 
-
             menuWidget.crearMenu("Bienvenio, ¿Que quieres hacer?","Nuevo cliente", "Soy Cliente","ClienteDefault");
 
 
