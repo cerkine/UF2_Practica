@@ -27,6 +27,5 @@ public class GestionCliente {
         clientes[99].pass = "0";
         clientes[99].height = 1.70;
         clienteLogeado = clientes[99];
-
     }
 }

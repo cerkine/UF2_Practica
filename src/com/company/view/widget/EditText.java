@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class EditText {
 
     public String texto(String hint) {
-        System.out.println(hint);
         Scanner scanner = new Scanner(System.in);
         Mensaje mensaje = new Mensaje();
         boolean esValido = false;
         String valor = "";
         do {
+            mensaje.mostrarHint(hint);
             valor = scanner.nextLine();
             esValido = true;
             if ("".equals(valor)) {
@@ -23,16 +23,24 @@ public class EditText {
     }
 
     public int numero(String hint) {
-        System.out.println(hint);
         Scanner scanner = new Scanner(System.in);
         Mensaje mensaje = new Mensaje();
         boolean esValido = false;
         int valor = 0;
+        String valorLeido="";
         do {
-            valor = scanner.nextInt();
-            scanner.nextLine();
+            mensaje.mostrarHint(hint);
+            valorLeido = scanner.nextLine();
             esValido = true;
-            if (valor == 0) {
+            try{
+                valor = Integer.parseInt(valorLeido);
+            }catch(Exception e){
+                mensaje.mostrarError("Introduzca un numero");
+                valor=1;
+                esValido = false;
+            }
+
+            if (valor < 0) {
                 mensaje.mostrarError("Error tienes que poner un numero mayor que 0");
                 esValido = false;
             }

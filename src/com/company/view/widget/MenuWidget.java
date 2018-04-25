@@ -15,12 +15,10 @@ public class MenuWidget {
 
         for (int i = 0; i < opciones.length ; i++) {
             System.out.println( i+1 +"-"+ opciones[i]);
-
         }
         System.out.println("\n\n\n0-Salir");
-
         do {
-            opcion = scanner.nextInt();
+            opcion = new EditText().numero("opcion:");
             if (opcion > opciones.length) {
                 mensaje.mostrarError("Error, esa opcion no es correcta.");
             } else {
