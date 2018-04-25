@@ -16,7 +16,6 @@ public class GestionCliente {
             if (clientes[i] != null && clientes[i].DNI.equals(comdni) && clientes[i].pass.equals(compass)) {
                 clienteLogeado = clientes[i];
                 return true;
-
             }
         }
         return false;
