@@ -1,10 +1,8 @@
 package com.company;
-import com.company.manager.Gestion;
-import com.company.manager.GestionBaseDeDatos;
-import com.company.manager.GestionHora;
+import com.company.manager.*;
 import com.company.view.MenuEleccionCliente;
-import com.company.manager.GestionAtraccion;
 import com.company.model.Cliente;
+import com.company.view.RegistroCliente;
 import com.company.view.ViewRegistroAcceso;
 
 import java.util.Scanner;
@@ -12,7 +10,20 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-       GestionAtraccion.change();
+//        Cliente cliente = new Cliente();
+//        cliente.name = "prue";
+//        cliente.dinero = 100;
+//        cliente.height = 1.8;
+//        cliente.pass= "prue";
+//        cliente.DNI = "22222";
+//        cliente.subname = "preubaaa";
+//        cliente.ages= 16;
+//        cliente.mail = "fdssdf@dss";
+//
+//        GestionCliente.clienteLogeado =cliente;
+//        GestionCliente.cargarCliente();
+
+        GestionAtraccion.change();
 
         Gestion.cargarParque();
 

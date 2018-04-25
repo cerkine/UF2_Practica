@@ -1,5 +1,6 @@
 package com.company.view;
 
+import com.company.manager.Gestion;
 import com.company.manager.GestionCliente;
 import com.company.model.Cliente;
 import com.company.model.Donacion;
@@ -9,12 +10,9 @@ import com.company.view.widget.WindowTitle;
 import java.util.Scanner;
 
 public class RegistroCliente {
-    Scanner scanner = new Scanner(System.in);
-    EditText editText = new EditText();
-    PantallaDonacion pantalladonacion = new PantallaDonacion();
-    Donacion donacion;
+    static EditText editText = new EditText();
 
-    public void pedirDatos(){
+    public static Cliente pedirDatos(){
         Cliente cliente = GestionCliente.clienteLogeado;
         WindowTitle windowTitle = new WindowTitle();
 
@@ -31,27 +29,15 @@ public class RegistroCliente {
         cliente.ages = editText.numero("¿Que edad tienes?");
         cliente.height = editText.altura("Cuanto mides de alto?");
         cliente.dinero=editText.numero("Cuanto money hay en tu cartera");
+        return cliente;
 
-        if (cliente.ages > 17) {
-            System.out.println("¿Quieres hacerte la tarjeta de socio? (Pon si para confirmar)");
-
-            if (scanner.nextLine().equals("si")) {
-                cliente.subscrption = true;
-            }
-
-            System.out.println("¿Quieres donar? (Pon si para confirmar)");
-            if (scanner.nextLine().equals("si")) {
-                cliente.donation = true;
-                pantalladonacion.donar(cliente,donacion);
-            }
-        }
     }
-    public String pedirDni () {
+    public static String pedirDni () {
         return editText.texto("DNI");
 
 
     }
-    public String pedirPass (){
+    public static String pedirPass (){
         return editText.texto("Pass");
 
     }

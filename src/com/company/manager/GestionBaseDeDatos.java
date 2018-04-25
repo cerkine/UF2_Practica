@@ -1,21 +1,17 @@
 package com.company.manager;
 
-import com.company.model.Atraccion;
 import com.company.model.Cliente;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-
 public class GestionBaseDeDatos {
     static final String url = "jdbc:sqlite:database.db";
-    static final int DATABASE_VERSION = 1;
+    static final int DATABASE_VERSION = 3;
 
     static GestionBaseDeDatos instance;
     static Connection conn;
 
-    public static GestionBaseDeDatos get(){
-        if(instance == null){
+    public static GestionBaseDeDatos get() {
+        if (instance == null) {
             instance = new GestionBaseDeDatos();
 
             try {
@@ -24,7 +20,7 @@ public class GestionBaseDeDatos {
                 System.out.println(e.getMessage());
             }
 
-            if(instance.getVersion() != DATABASE_VERSION){
+            if (instance.getVersion() != DATABASE_VERSION) {
                 System.out.println("VERSION = " + instance.getVersion());
                 instance.upgradeDatabase();
                 instance.setVersion();
@@ -33,9 +29,9 @@ public class GestionBaseDeDatos {
         return instance;
     }
 
-    public int getVersion(){
-        try (Statement stmt  = conn.createStatement()){
-            ResultSet rs  = stmt.executeQuery("PRAGMA user_version");
+    public int getVersion() {
+        try (Statement stmt = conn.createStatement()) {
+            ResultSet rs = stmt.executeQuery("PRAGMA user_version");
             while (rs.next()) {
                 return rs.getInt("user_version");
             }
@@ -45,82 +41,77 @@ public class GestionBaseDeDatos {
         return -1;
     }
 
-    public void setVersion(){
-        try (Statement stmt  = conn.createStatement()){
+    public void setVersion() {
+        try (Statement stmt = conn.createStatement()) {
             stmt.execute("PRAGMA user_version = " + DATABASE_VERSION);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    void upgradeDatabase(){
+    void upgradeDatabase() {
         deleteTables();
         createTables();
     }
 
-    void deleteTables(){
+    void deleteTables() {
         try (Statement stmt = conn.createStatement()) {
-            stmt.execute("DROP TABLE IF EXISTS cliente;");
-            stmt.execute("DROP TABLE IF EXISTS atracciones;");
+            stmt.execute("DROP TABLE IF EXISTS clientes;");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    void createTables(){
+    void createTables() {
         try (Statement stmt = conn.createStatement()) {
-            stmt.execute("CREATE TABLE IF NOT EXISTS clientes (nombre text, nota real);");
-            stmt.execute("CREATE TABLE IF NOT EXISTS atracciones (nombre text, int edad);");
+            stmt.execute("CREATE TABLE IF NOT EXISTS clientes (nombre text, apellidos text, DNI text PRIMARY KEY, Pass text, email text, edad integer, height double, money integer);");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void insertCliente(String nombre, double nota) {
-        String sql = "INSERT INTO clientes(nombre,nota) VALUES(?,?)";
+    public static void insertCliente(String nombre, String apellidos, String DNI, String Pass, String email, int edad, double height, int money) {
+        String sql = "INSERT INTO clientes(nombre, apellidos, DNI, Pass, email, edad, height, money) VALUES(?,?,?,?,?,?,?,?)";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, nombre);
-            pstmt.setDouble(2, nota);
+            pstmt.setString(2, apellidos);
+            pstmt.setString(3, DNI);
+            pstmt.setString(4, Pass);
+            pstmt.setString(5, email);
+            pstmt.setInt(6, edad);
+            pstmt.setDouble(7, height);
+            pstmt.setInt(8, money);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public Cliente[] selectTodasLosClientes(){
-        String sql = "SELECT * FROM clientes";
+    public static Cliente selectCliente(String dni, String pass) {
+        String sql = "SELECT * FROM clientes WHERE DNI LIKE ? AND Pass LIKE ?";
 
-        try (Statement stmt  = conn.createStatement()){
-            ResultSet rs  = stmt.executeQuery(sql);
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
+            pstmt.setString(1, dni);
+            pstmt.setString(2, pass);
+            ResultSet rs = pstmt.executeQuery();
+
+            Cliente cliente = new Cliente();
             while (rs.next()) {
-                System.out.println(rs.getString("nombre") + "\t" +
-                        rs.getDouble("nota"));
+                cliente.name = rs.getString("nombre");
+                cliente.subname = rs.getString("apellidos");
+                cliente.DNI = rs.getString("DNI");
+                cliente.pass = rs.getString("Pass");
+                cliente.mail = rs.getString("email");
+                cliente.ages = rs.getInt("edad");
+                cliente.height = rs.getDouble("height");
+                cliente.dinero = rs.getInt("money");
+                return cliente;
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
-        return new Cliente[1];
-    }
-
-    public Cliente[] selectAtraccionPorEdad(double edad){
-        String sql = "SELECT * FROM atracciones WHERE edad = ?";
-
-        try (PreparedStatement pstmt  = conn.prepareStatement(sql)){
-
-            pstmt.setDouble(1, edad);
-            ResultSet rs  = pstmt.executeQuery();
-
-            while (rs.next()) {
-                System.out.println(rs.getString("nombre") + "\t" +
-                        rs.getDouble("nota"));
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
-        return new Cliente[1];
+        return null;
     }
 }

@@ -7,12 +7,8 @@ public class GestionCliente {
 
 
     public static void cargarCliente() {
-        for (int i = 0; i < clientes.length; i++) {
-            if (clientes[i] == null) {
-                clientes[i] = new Cliente();
-                clienteLogeado = clientes[i];
-            }
-        }
+        GestionBaseDeDatos.get().insertCliente(clienteLogeado.name, clienteLogeado.subname, clienteLogeado.DNI, clienteLogeado.pass,
+                clienteLogeado.mail, clienteLogeado.ages, clienteLogeado.height, clienteLogeado.dinero);
     }
 
     public static boolean comprobarCliente(String comdni, String compass) {

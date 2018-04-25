@@ -1,10 +1,11 @@
 package com.company.view;
 
+import com.company.manager.GestionBaseDeDatos;
 import com.company.manager.GestionCliente;
+import com.company.model.Cliente;
 import com.company.view.widget.MenuWidget;
 
 public class ViewRegistroAcceso {
-    RegistroCliente registroCliente = new RegistroCliente();
     MenuWidget menuWidget = new MenuWidget();
     public void decision() {
 
@@ -13,14 +14,14 @@ public class ViewRegistroAcceso {
             int opcion=menuWidget.opcion;
         switch (opcion) {
                 case 1:
-                    GestionCliente.cargarCliente();
-                     registroCliente.pedirDatos();
+                     GestionCliente.clienteLogeado = new Cliente();
+                     GestionCliente.clienteLogeado=RegistroCliente.pedirDatos();
+                     GestionCliente.cargarCliente();
                      break;
                 case 2:
-                    String pedirDni= registroCliente.pedirDni();
-                    String pedirPass= registroCliente.pedirPass();
-
-                    GestionCliente.comprobarCliente(pedirDni,pedirPass);
+                    do {
+                        GestionCliente.clienteLogeado = GestionBaseDeDatos.get().selectCliente(RegistroCliente.pedirDni(), RegistroCliente.pedirPass());
+                    }while (GestionCliente.clienteLogeado == null);
                     break;
 
                 case 3:
