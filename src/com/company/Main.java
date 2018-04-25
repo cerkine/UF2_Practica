@@ -1,10 +1,8 @@
 package com.company;
-import com.company.manager.Gestion;
-import com.company.manager.GestionCliente;
-import com.company.view.MenuAdminAtraccion;
+import com.company.manager.*;
 import com.company.view.MenuEleccionCliente;
-import com.company.manager.GestionAtraccion;
 import com.company.model.Cliente;
+import com.company.view.RegistroCliente;
 import com.company.view.ViewRegistroAcceso;
 
 import java.util.Scanner;
@@ -12,47 +10,34 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Cliente cliente;
-        boolean validez = true;
-        // write your code here
-        GestionAtraccion gestionAtraccion = new GestionAtraccion();
-        gestionAtraccion.change();
-//        ViewConsulaApertura gestionConsulta = new ViewConsulaApertura();
-        Scanner scanner = new Scanner(System.in);
+//        Cliente cliente = new Cliente();
+//        cliente.name = "prue";
+//        cliente.dinero = 100;
+//        cliente.height = 1.8;
+//        cliente.pass= "prue";
+//        cliente.DNI = "22222";
+//        cliente.subname = "preubaaa";
+//        cliente.ages= 16;
+//        cliente.mail = "fdssdf@dss";
+//
+//        GestionCliente.clienteLogeado =cliente;
+//        GestionCliente.cargarCliente();
 
-        Gestion gestion = new Gestion();
-        gestion.cargarParque(gestionAtraccion);
+        GestionAtraccion.change();
+
+        Gestion.cargarParque();
 
         ViewRegistroAcceso viewRegistroAcceso = new ViewRegistroAcceso();
-        do {
-            cliente = viewRegistroAcceso.decision();
-            if (viewRegistroAcceso.menuWidget.opcion == 0) {
-                validez = false;
-                break;
-            }
-        } while (cliente == null);
-        /*
-            Esto puede llegar a dar un null, podemos hacer que el cliente[99] lo cargemos, ponemos una variable boolean en cliente que sea null=false, si esto nos va a devolver un null, podemos iniciarliar
-            ese cliente y lo cargamos con null true, aqui podmos hacer que si if(cliente.null) haga una cosa y sino pos que haga otra, asi nos evitamos que el main pete si no hay espacio de usuario o si no introducen
-            bien la contraseña*/
 
+        viewRegistroAcceso.decision();
 
-        if (validez) {
-            if (viewRegistroAcceso.gestionCliente.clientes[98] == cliente) {
-                MenuAdminAtraccion menuAdminAtraccion = new MenuAdminAtraccion();
-                int opcion;
-                do {
-                    opcion = menuAdminAtraccion.menuAdmin(gestionAtraccion.lista);
-                } while (opcion != 0);
+        MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();
 
-            } else {
-                MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();
-                int opcion;
-                do {
-                    opcion = menuEleccionCliente.menuCliente(cliente, gestionAtraccion.lista);
-                } while (opcion != 0);
-
-            }
-        }
+        int opcioncliente;
+        do{
+            opcioncliente = menuEleccionCliente.menuCliente();
+        }while (opcioncliente!=0);
     }
+
+
 }
