@@ -31,7 +31,6 @@ public class Main {
 
         viewRegistroAcceso.decision();
 
-
         MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();
 
         int opcioncliente;
