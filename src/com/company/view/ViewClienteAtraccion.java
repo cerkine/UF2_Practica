@@ -17,6 +17,7 @@ public class ViewClienteAtraccion {
             for (int x = 0; x < GestionAtraccion.lista.length ; x++) {
                 String nombre=GestionAtraccion.lista[x].getClass().getSimpleName();
                 System.out.println(nombre);
+
             }
 
 

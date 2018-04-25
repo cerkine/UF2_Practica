@@ -1,34 +1,47 @@
 package com.company.view;
 
-import com.company.manager.GestionBaseDeDatos;
 import com.company.manager.GestionCliente;
 import com.company.model.Cliente;
+import com.company.view.widget.Mensaje;
 import com.company.view.widget.MenuWidget;
+import com.company.view.widget.WindowTitle;
+
+import java.util.Scanner;
 
 public class ViewRegistroAcceso {
-    MenuWidget menuWidget = new MenuWidget();
-    public void decision() {
+    public int decisionS;
+    Scanner scanner =new Scanner(System.in);
+    public GestionCliente gestionCliente = new GestionCliente();
+    RegistroCliente registroCliente = new RegistroCliente();
+    public MenuWidget menuWidget = new MenuWidget();
+    Mensaje mensaje = new Mensaje();
+    public Cliente decision() {
+            gestionCliente.adminDefault();
 
 
             menuWidget.crearMenu("Bienvenio, ¿Que quieres hacer?","Nuevo cliente", "Soy Cliente","ClienteDefault");
-            int opcion=menuWidget.opcion;
-        switch (opcion) {
+
+
+            switch (menuWidget.opcion) {
                 case 1:
-                     GestionCliente.clienteLogeado = new Cliente();
-                     GestionCliente.clienteLogeado=RegistroCliente.pedirDatos();
-                     GestionCliente.cargarCliente();
-                     break;
+                    Cliente cliente = gestionCliente.cargarCliente();
+                    return registroCliente.pedirDatos(cliente);
                 case 2:
-                    do {
-                        GestionCliente.clienteLogeado = GestionBaseDeDatos.get().selectCliente(RegistroCliente.pedirDni(), RegistroCliente.pedirPass());
-                    }while (GestionCliente.clienteLogeado == null);
-                    break;
-
+                    do{
+                        String pedirDni= registroCliente.pedirDni();
+                        String pedirPass= registroCliente.pedirPass();
+                        cliente=gestionCliente.comprobarCliente(pedirDni,pedirPass);
+                        mensaje.mostrarError("Error Usuario \n Desea salir pulse 0 \n Volver a intentar 1");
+                        int opcion = scanner.nextInt();scanner.nextLine();
+                        if(opcion==0){
+                            break;
+                        }
+                    }while (cliente==null);
+                    return cliente;
                 case 3:
-                    GestionCliente.clienteDefault();
-                    break;
+                    return gestionCliente.clienteDefault();
             }
-
+            return null;
 
     }
 }
