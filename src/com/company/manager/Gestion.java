@@ -15,7 +15,6 @@ public class Gestion {
         seccion[0].DatosSeccion(seccion[0], 0, 2.50, 2.50, "Palacio Real");
         seccion[1].DatosSeccion(seccion[1], 1, 1.85, 2, "Ciudadela");
         seccion[2].DatosSeccion(seccion[2], 2, 0.5, 3.8, "Bosque NO Prohibido");
-        Atraccion atraccion = new Atraccion();
 
 
         for (int i = 0; i < seccion.length; i++) {

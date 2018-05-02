@@ -1,9 +1,7 @@
 package com.company.view;
 
-import com.company.manager.Gestion;
 import com.company.manager.GestionCliente;
 import com.company.model.Cliente;
-import com.company.model.Donacion;
 import com.company.view.widget.EditText;
 import com.company.view.widget.WindowTitle;
 
@@ -39,16 +37,6 @@ public class RegistroCliente {
     }
     public static String pedirPass (){
         return editText.texto("Pass");
-
-    }
-    public void mostrardatos(Cliente cliente){
-
-        System.out.println("Tus Datos");
-        System.out.println();
-        System.out.println("Nombre: "+cliente.name);
-        System.out.println("Apellidos: "+cliente.subname);
-        System.out.println("DNI: "+cliente.DNI);
-        System.out.println("Socio: "+cliente.subscrption);
 
     }
 }

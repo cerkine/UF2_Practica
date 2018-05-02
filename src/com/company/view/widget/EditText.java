@@ -51,15 +51,23 @@ public class EditText {
     }
 
     public double altura(String hint) {
-        System.out.println(hint);
         Scanner scanner = new Scanner(System.in);
         Mensaje mensaje = new Mensaje();
         boolean esValido = false;
         double valor = 0;
+        String valorLeido="";
         do {
-            valor = scanner.nextDouble();
-            scanner.nextLine();
+            mensaje.mostrarHint(hint);
+            valorLeido = scanner.nextLine();
             esValido = true;
+            try{
+                valor = Double.parseDouble(valorLeido);
+            }catch(Exception e){
+                mensaje.mostrarError("Introduzca un numero en formato double. Ej: 1.60");
+                valor=1;
+                esValido = false;
+            }
+
             if (valor == 0) {
                 mensaje.mostrarError("Error no puedes dejar el campo vacio");
                 esValido = false;

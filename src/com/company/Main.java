@@ -1,8 +1,6 @@
 package com.company;
 import com.company.manager.*;
 import com.company.view.MenuEleccionCliente;
-import com.company.model.Cliente;
-import com.company.view.RegistroCliente;
 import com.company.view.ViewRegistroAcceso;
 
 import java.util.Scanner;
@@ -28,8 +26,9 @@ public class Main {
         Gestion.cargarParque();
 
         ViewRegistroAcceso viewRegistroAcceso = new ViewRegistroAcceso();
-
-        viewRegistroAcceso.decision();
+        do {
+            viewRegistroAcceso.decision();
+        } while(GestionCliente.clienteLogeado == null);
 
 
         MenuEleccionCliente menuEleccionCliente = new MenuEleccionCliente();

@@ -3,14 +3,13 @@ package com.company.view;
 import com.company.manager.GestionBaseDeDatos;
 import com.company.manager.GestionCliente;
 import com.company.model.Cliente;
+import com.company.view.widget.EditText;
 import com.company.view.widget.Mensaje;
 import com.company.view.widget.MenuWidget;
-import com.company.view.widget.WindowTitle;
-
-import java.util.Scanner;
-
 public class ViewRegistroAcceso {
     MenuWidget menuWidget = new MenuWidget();
+    Mensaje mensaje = new Mensaje();
+    EditText editText = new EditText();
     public void decision() {
 
 
@@ -25,6 +24,17 @@ public class ViewRegistroAcceso {
             case 2:
                 do {
                     GestionCliente.clienteLogeado = GestionBaseDeDatos.get().selectCliente(RegistroCliente.pedirDni(), RegistroCliente.pedirPass());
+                    String decision = "";
+                    if (GestionCliente.clienteLogeado == null){
+                        mensaje.mostrarError("Error, ese usuario no esta registrado");
+                        decision = editText.texto("Desea volver a intentar introducir un usuario? S para si, N para no");
+
+                    }
+                    if (decision.equals("N")){
+                        break;
+                    }
+
+
                 }while (GestionCliente.clienteLogeado == null);
                 break;
 
