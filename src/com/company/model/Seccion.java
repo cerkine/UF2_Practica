@@ -7,42 +7,6 @@ public  class Seccion {
         return code_place;
     }
 
-    public void setCode_place(int code_place) {
-        this.code_place = code_place;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public double getArea() {
-        return area;
-    }
-
-    public void setArea(double area) {
-        this.area = area;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     int code_place; /* codigo del lugar */
     double height; /* todo es km */
     double width;

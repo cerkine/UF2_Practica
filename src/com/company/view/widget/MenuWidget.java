@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class MenuWidget {
     WindowTitle windowTitle = new WindowTitle();
     Mensaje mensaje = new Mensaje();
-    Scanner scanner = new Scanner(System.in);
     boolean esValida = true;
     public int opcion = 0;
 

@@ -10,8 +10,6 @@ public class Cliente {
     public String mail;
     public boolean subscrption = false;
     public int ages;
-    public boolean donation =false;
-    public int donate;
     public double height;
     public int dinero;
 

@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class Tiovivo extends Atraccion {
 
-    int asientos = 20;
     Random random = new Random();
 
     @Override public void cambiarAtr(){

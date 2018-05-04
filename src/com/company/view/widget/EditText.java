@@ -7,8 +7,8 @@ public class EditText {
     public String texto(String hint) {
         Scanner scanner = new Scanner(System.in);
         Mensaje mensaje = new Mensaje();
-        boolean esValido = false;
-        String valor = "";
+        boolean esValido;
+        String valor;
         do {
             mensaje.mostrarHint(hint);
             valor = scanner.nextLine();
@@ -25,9 +25,9 @@ public class EditText {
     public int numero(String hint) {
         Scanner scanner = new Scanner(System.in);
         Mensaje mensaje = new Mensaje();
-        boolean esValido = false;
-        int valor = 0;
-        String valorLeido="";
+        boolean esValido;
+        int valor;
+        String valorLeido;
         do {
             mensaje.mostrarHint(hint);
             valorLeido = scanner.nextLine();
@@ -53,9 +53,9 @@ public class EditText {
     public double altura(String hint) {
         Scanner scanner = new Scanner(System.in);
         Mensaje mensaje = new Mensaje();
-        boolean esValido = false;
-        double valor = 0;
-        String valorLeido="";
+        boolean esValido;
+        double valor;
+        String valorLeido;
         do {
             mensaje.mostrarHint(hint);
             valorLeido = scanner.nextLine();

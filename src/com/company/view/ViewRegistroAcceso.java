@@ -13,7 +13,7 @@ public class ViewRegistroAcceso {
     public void decision() {
 
 
-        menuWidget.crearMenu("Bienvenio, ¿Que quieres hacer?","Nuevo cliente", "Soy Cliente","ClienteDefault");
+        menuWidget.crearMenu("Bienvenio, ¿Que quieres hacer?","Nuevo cliente", "Soy Cliente");
         int opcion=menuWidget.opcion;
         switch (opcion) {
             case 1:
@@ -22,24 +22,26 @@ public class ViewRegistroAcceso {
                 GestionCliente.cargarCliente();
                 break;
             case 2:
+                String decision = "";
                 do {
                     GestionCliente.clienteLogeado = GestionBaseDeDatos.get().selectCliente(RegistroCliente.pedirDni(), RegistroCliente.pedirPass());
-                    String decision = "";
-                    if (GestionCliente.clienteLogeado == null){
+
+                    if (GestionCliente.clienteLogeado == null) {
                         mensaje.mostrarError("Error, ese usuario no esta registrado");
-                        decision = editText.texto("Desea volver a intentar introducir un usuario? S para si, N para no");
+                        do {
+                            decision = editText.texto("Desea volver a intentar introducir un usuario? S para si, N para no");
+                            if (decision.equals("N")) {
+                                break;
+                            } else if (decision.equals("S")) {
 
+                            } else {
+                                mensaje.mostrarError("Error, opcion no correcta");
+                            }
+                        } while (!decision.equals("N") && !decision.equals("S"));
                     }
-                    if (decision.equals("N")){
-                        break;
-                    }
 
 
-                }while (GestionCliente.clienteLogeado == null);
-                break;
-
-            case 3:
-                GestionCliente.clienteDefault();
+                }while (GestionCliente.clienteLogeado == null && !decision.equals("N"));
                 break;
         }
 

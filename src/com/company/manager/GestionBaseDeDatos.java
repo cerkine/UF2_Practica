@@ -5,7 +5,7 @@ import com.company.model.Cliente;
 import java.sql.*;
 public class GestionBaseDeDatos {
     static final String url = "jdbc:sqlite:database.db";
-    static final int DATABASE_VERSION = 3;
+    static final int DATABASE_VERSION = 4;
 
     static GestionBaseDeDatos instance;
     static Connection conn;
@@ -52,7 +52,21 @@ public class GestionBaseDeDatos {
     void upgradeDatabase() {
         deleteTables();
         createTables();
+        insertAdmin();
     }
+
+    void insertAdmin() {
+        String sql = "INSERT INTO clientes(DNI, Pass) VALUES(?,?)";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, "admin");
+            pstmt.setString(2, "putoamo");
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 
     void deleteTables() {
         try (Statement stmt = conn.createStatement()) {

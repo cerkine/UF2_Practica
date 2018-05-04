@@ -1,6 +1,5 @@
 package com.company.manager;
 
-import com.company.model.Atraccion;
 import com.company.model.Seccion;
 
 public class Gestion {

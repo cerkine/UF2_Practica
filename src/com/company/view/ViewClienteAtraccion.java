@@ -3,7 +3,6 @@ package com.company.view;
 import com.company.manager.GestionAtraccion;
 import com.company.manager.GestionCompararNombre;
 import com.company.model.Atraccion;
-import com.company.model.Cliente;
 
 import java.util.Scanner;
 
